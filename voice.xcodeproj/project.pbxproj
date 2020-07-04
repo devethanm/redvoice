@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA36C2CD24AED8E2005E45A2 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36C2CC24AED8E2005E45A2 /* Algorithms.swift */; };
 		AA556F1C24AD2E91003BC124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA556F1B24AD2E91003BC124 /* Assets.xcassets */; };
 		AA556F2324AD2E91003BC124 /* voice MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA556F2224AD2E91003BC124 /* voice MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA556F2824AD2E91003BC124 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA556F2724AD2E91003BC124 /* Messages.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA36C2CC24AED8E2005E45A2 /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 		AA556F1824AD2E90003BC124 /* voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA556F1B24AD2E91003BC124 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA556F1D24AD2E91003BC124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				AA556F1924AD2E90003BC124 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		AA556F1924AD2E90003BC124 /* Products */ = {
 			isa = PBXGroup;
@@ -106,6 +109,7 @@
 				AA556F2C24AD2E91003BC124 /* MainInterface.storyboard */,
 				AA556F2F24AD2E91003BC124 /* Assets.xcassets */,
 				AA556F3124AD2E91003BC124 /* Info.plist */,
+				AA36C2CC24AED8E2005E45A2 /* Algorithms.swift */,
 			);
 			path = "voice MessagesExtension";
 			sourceTree = "<group>";
@@ -210,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA556F2B24AD2E91003BC124 /* MessagesViewController.swift in Sources */,
+				AA36C2CD24AED8E2005E45A2 /* Algorithms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

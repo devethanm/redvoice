@@ -9,12 +9,67 @@
 import UIKit
 import Messages
 
-class MessagesViewController: MSMessagesAppViewController {
+class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var pickerLabel: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    
+    
+    let algorithms = ["original", "test"]
+    
+    func numberOfComponents( in pickerView: UIPickerView ) -> Int {
+            return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return algorithms[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return algorithms.count
+    }
+	
+	
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+		
+		let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
+		
+		let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
+		
+		label.text = algorithms[row]
+		label.textColor = .white
+		label.textAlignment = .center
+		label.font = .systemFont(ofSize: 20, weight: .bold)
+		
+		view.addSubview( label )
+		
+		return view
+    }
+	
+	
+    /*
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+	
+    }
+    */
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		
+		pickerView.delegate = self
+		pickerView.dataSource = self
+        //textView.backgroundColor = view.backgroundColor
     }
+	
+	func textFieldShouldReturn(_ textBox: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return true
+	}
     
     // MARK: - Conversation Handling
     
@@ -62,6 +117,28 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
+		
+		if (presentationStyle == .expanded) {
+
+		}
+		
+		if (presentationStyle == .compact) {
+			// this presentation style is default
+			
+            
+		}
+		
+		//send message function
+		func sendMessage(_ message: MSMessage,
+						 completionHandler: ((Error?) -> Void)? = nil) {
+			
+		}
+		
+		func clearText(_ sender: Any) {
+			//TODO: figure out a way to clear the textfield, if not add a message preview text box
+		}
+		
+		
     }
 
 }
