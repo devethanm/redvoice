@@ -9,13 +9,33 @@
 import UIKit
 import Messages
 
-class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var pickerLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
-    
-    
-    
+	@IBOutlet weak var writeTextView: UITextView!
+	@IBOutlet weak var previewTextView: UITextView!
+	@IBOutlet weak var clearButton: UIButton!
+	@IBOutlet weak var genButton: UIButton!
+	@IBOutlet weak var sendButton: UIButton!
+	
+	
+	@IBAction func clearButtonPressed(_ sender: Any) {
+		writeTextView.text = ""
+		previewTextView.text = ""
+	}
+	
+	@IBAction func genButtonPressed(_ sender: Any) {
+		previewTextView.text = writeTextView.text
+	}
+	
+	@IBAction func sendButtonPressed(_ sender: Any) {
+		
+	}
+	
+	
+	
     let algorithms = ["original", "test"]
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
@@ -29,7 +49,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return algorithms.count
     }
-	
 	
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 		
@@ -47,7 +66,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		return view
     }
 	
-	
     /*
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 	
@@ -63,16 +81,36 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		pickerView.delegate = self
 		pickerView.dataSource = self
-        //textView.backgroundColor = view.backgroundColor
+		writeTextView.delegate = self
+
+		
+		self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+		
+		//writeTextView.alwaysBounceVertical = true
+		
     }
-	
-	func textFieldShouldReturn(_ textBox: UITextField) -> Bool {
-		self.view.endEditing(true)
-		return true
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        requestPresentationStyle(.expanded)
+    }
+    
+	@objc func tapDone(sender: Any) {
+		
+        requestPresentationStyle(.compact)
+        //writeTextView.resignFirstResponder()
+
+        //if presentationStyle == .compact {
+            
+		//}
+		//else if presentationStyle == .expanded {
+		//	self.view.endEditing(true)
+
+		//}
 	}
+	
+	
     
     // MARK: - Conversation Handling
-    
     override func willBecomeActive(with conversation: MSConversation) {
         // Called when the extension is about to move from the inactive to active state.
         // This will happen when the extension is about to present UI.
@@ -112,6 +150,8 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     
         // Use this method to prepare for the change in presentation style.
     }
+	
+
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called after the extension transitions to a new presentation style.
@@ -119,7 +159,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         // Use this method to finalize any behaviors associated with the change in presentation style.
 		
 		if (presentationStyle == .expanded) {
-
+            
 		}
 		
 		if (presentationStyle == .compact) {
@@ -133,11 +173,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 						 completionHandler: ((Error?) -> Void)? = nil) {
 			
 		}
-		
-		func clearText(_ sender: Any) {
-			//TODO: figure out a way to clear the textfield, if not add a message preview text box
-		}
-		
 		
     }
 

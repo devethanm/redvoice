@@ -44,6 +44,9 @@
                                     <color key="titleColor" red="0.85896831750869751" green="0.82661014795303345" blue="0.88236010074615479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="genButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ole-Ts-GRa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrQ-9g-zub">
                                 <rect key="frame" x="202" y="122" width="76" height="25"/>
@@ -58,6 +61,9 @@
                                     <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="9CI-VD-C2w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJO-eH-fbb">
                                 <rect key="frame" x="42" y="122" width="76" height="25"/>
@@ -72,10 +78,13 @@
                                     <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="PT2-r3-d7z"/>
+                                </connections>
                             </button>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-BW-e9S">
                                 <rect key="frame" x="0.0" y="176" width="160" height="325"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -83,9 +92,8 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wy-CW-WkJ">
                                 <rect key="frame" x="160" y="176" width="160" height="325"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -165,8 +173,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
+                        <outlet property="clearButton" destination="tJO-eH-fbb" id="cH0-r9-noP"/>
+                        <outlet property="genButton" destination="P3B-WQ-jgZ" id="uvU-1q-SjP"/>
                         <outlet property="pickerLabel" destination="yuy-dq-Vj5" id="iPS-8D-N9e"/>
                         <outlet property="pickerView" destination="wP5-Cy-slw" id="hnT-Wb-Wud"/>
+                        <outlet property="previewTextView" destination="5wy-CW-WkJ" id="h9e-5a-GGC"/>
+                        <outlet property="sendButton" destination="wrQ-9g-zub" id="XTk-I1-JLC"/>
+                        <outlet property="writeTextView" destination="Z4A-BW-e9S" id="DJF-VM-RsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
