@@ -32,7 +32,6 @@ public class Generate {
 			for word in textarray {
 				returnText += (word + " " + symbols.randomElement()! + " ")
 			}
-			returnText += " " + symbols.randomElement()!
 			
 			return returnText
 		}
@@ -45,7 +44,6 @@ public class Generate {
 			for word in textarray {
 				returnText += (word + " " + symbols.randomElement()! + " ")
 			}
-			returnText += " " + symbols.randomElement()!
 			
 			return returnText
 			
@@ -59,7 +57,6 @@ public class Generate {
 			for word in textarray {
 				returnText += (word + " " + symbols.randomElement()! + " ")
 			}
-			returnText += " " + symbols.randomElement()!
 			
 			return returnText
 			

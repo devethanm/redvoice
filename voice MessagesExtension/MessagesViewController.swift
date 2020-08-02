@@ -70,7 +70,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
         let view = UIView()
 		//let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
-        view.frame = CGRect(x: 0,y: 0,width: 100,height: 100)
+        view.frame = CGRect(x: 0,y: 0,width: 100,height: 75)
 		
         let label = UILabel()
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
@@ -110,9 +110,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         /*
          STYLING
          */
+		pickerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+		pickerView.center = self.view.center
         pickerView.layer.borderColor = UIColor.purple.cgColor
         pickerView.layer.borderWidth = 1.0
-        
         rotationAngle = -90 * (.pi/180)
         pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
 		
