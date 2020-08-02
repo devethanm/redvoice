@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLIDE TO SELECT STYLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuy-dq-Vj5">
-                                <rect key="frame" x="50" y="44" width="220" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLIDE TO SELECT STYLE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuy-dq-Vj5">
+                                <rect key="frame" x="47.666666666666657" y="44" width="224.99999999999997" height="26"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="YvU-2q-1In"/>
@@ -118,7 +118,7 @@
                             </label>
                             <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="wP5-Cy-slw">
                                 <rect key="frame" x="70" y="59" width="180" height="63"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="036-l9-skp"/>
                                     <constraint firstAttribute="width" constant="180" id="c5Z-NR-X3x"/>

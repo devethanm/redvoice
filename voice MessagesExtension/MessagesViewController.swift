@@ -21,6 +21,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var genButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
 	
+    var rotationAngle: CGFloat!
 	var selectedAlgorithm = "original"
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
@@ -43,12 +44,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	
-	
-    let algorithms = ["original", "no words", "halloween"]
+	// var declaration because users will be able to
+    // add their own algorithms
+    var algorithms = ["original", "no words", "halloween"]
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
-            return 1
-			//return algorithms.count
+            return 1 //keep this as 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -58,20 +59,31 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return algorithms.count
     }
-	
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
+    }
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 100
+    }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 		
-		let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
+        let view = UIView()
+		//let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
+        view.frame = CGRect(x: 0,y: 0,width: 100,height: 100)
 		
-		let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
+        let label = UILabel()
+		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
+        label.frame = CGRect(x: 0,y: 0,width: 100,height: 100)
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
 		label.font = .systemFont(ofSize: 20, weight: .bold)
-		
 		view.addSubview( label )
 		
+        view.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
+        
 		return view
     }
 	
@@ -94,6 +106,15 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 		
 		//writeTextView.alwaysBounceVertical = true
+        
+        /*
+         STYLING
+         */
+        pickerView.layer.borderColor = UIColor.purple.cgColor
+        pickerView.layer.borderWidth = 1.0
+        
+        rotationAngle = -90 * (.pi/180)
+        pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
 		
     }
 
