@@ -9,6 +9,7 @@
 import UIKit
 import Messages
 
+var generator = Generate()
 
 class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
@@ -20,26 +21,34 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var genButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
 	
-	
+	var selectedAlgorithm = "original"
+
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
 		previewTextView.text = ""
 	}
 	
 	@IBAction func genButtonPressed(_ sender: Any) {
-		previewTextView.text = writeTextView.text
+		previewTextView.text = ""
+		previewTextView.text = generator.generate( algorithm:selectedAlgorithm, text:writeTextView.text )
 	}
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
-		
+		if previewTextView.text != "" {
+			self.activeConversation?.insertText(previewTextView.text, completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+		}
+		else {
+			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text), completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+		}
 	}
 	
 	
 	
-    let algorithms = ["original", "test"]
+    let algorithms = ["original", "no words", "halloween"]
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1
+			//return algorithms.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -66,11 +75,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		return view
     }
 	
-    /*
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-	
+		selectedAlgorithm = algorithms[row]
     }
-    */
     
     
     
@@ -168,12 +175,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
             
 		}
 		
-		//send message function
-		func sendMessage(_ message: MSMessage,
-						 completionHandler: ((Error?) -> Void)? = nil) {
-			
-		}
-		
+    }
+    
+    //send message function
+    func sendMessage(_ message: MSMessage,
+                     completionHandler: ((Error?) -> Void)? = nil) {
+        
     }
 
 }
