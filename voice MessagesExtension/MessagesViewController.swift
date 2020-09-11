@@ -35,10 +35,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
 		if previewTextView.text != "" {
-			self.activeConversation?.insertText(previewTextView.text, completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+			self.activeConversation?.insertText(previewTextView.text)
 		}
 		else {
-			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text), completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text))
 		}
 	}
 	
