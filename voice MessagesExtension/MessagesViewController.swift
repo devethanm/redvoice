@@ -36,10 +36,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
 		if previewTextView.text != "" {
-			self.activeConversation?.insertText(previewTextView.text, completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+			self.activeConversation?.insertText(previewTextView.text)
 		}
 		else {
-			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text), completionHandler: { (error: NSError?) in } as? (Error?) -> Void )
+			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text))
 		}
 	}
 	
@@ -70,12 +70,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
         let view = UIView()
 		//let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
-        view.frame = CGRect(x: 0,y: 0,width: 100,height: 75)
+        view.frame = CGRect(x: 0,y: 15,width: 30,height: 100)
 		
         let label = UILabel()
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
-        label.frame = CGRect(x: 0,y: 0,width: 100,height: 100)
+        label.frame = CGRect(x: 0,y: 15,width: 30,height: 100)
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
@@ -110,7 +110,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         /*
          STYLING
          */
-		pickerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+		pickerView.frame = CGRect(x: 0, y: 0, width: 30, height: 100)
 		pickerView.center = self.view.center
         pickerView.layer.borderColor = UIColor.purple.cgColor
         pickerView.layer.borderWidth = 1.0
