@@ -22,7 +22,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var sendButton: UIButton!
 	
     var rotationAngle: CGFloat!
-	var selectedAlgorithm = "original"
+	var selectedAlgorithm = "*^!"
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
@@ -46,7 +46,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// var declaration because users will be able to
     // add their own algorithms
-    var algorithms = ["original", "no words", "halloween"]
+    var algorithms = ["*^!", "original", "no words", "halloween"]
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1 //keep this as 1
@@ -70,12 +70,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
         let view = UIView()
 		//let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
-        view.frame = CGRect(x: 0,y: 34,width: 100,height: 100)
+        view.frame = CGRect(x: 0,y: 30,width: 100,height: 100)
 		
         let label = UILabel()
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
-        label.frame = CGRect(x: 0,y: 34,width: 100,height: 100)
+        label.frame = CGRect(x: 0,y: 30,width: 100,height: 100)
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
@@ -110,7 +110,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         /*
          STYLING
          */
-		pickerView.frame = CGRect(x: 0, y: 34, width: 100, height: 100)
+		pickerView.frame = CGRect(x: 0, y: 30, width: 100, height: 100)
 		pickerView.center = self.view.center
         pickerView.layer.borderColor = UIColor.purple.cgColor
         pickerView.layer.borderWidth = 1.0

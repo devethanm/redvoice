@@ -23,7 +23,19 @@ public class Generate {
 		let textarray = text.split(separator: " ")
 		returnText = "";
 		
-		if algorithm == "original" {
+		if algorithm == "*^!" {
+			
+			symbols = ["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"]
+			
+			returnText += symbols.randomElement() ?? " "
+			returnText += " "
+			for word in textarray {
+				returnText += (word + " " + symbols.randomElement()! + " ")
+			}
+			
+			return returnText
+		}
+		else if algorithm == "original" {
 			
 			symbols = ["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "ok!", "slatt", "!"]
 			
