@@ -186,6 +186,7 @@
                         <outlet property="pickerView" destination="wP5-Cy-slw" id="hnT-Wb-Wud"/>
                         <outlet property="previewTextView" destination="5wy-CW-WkJ" id="h9e-5a-GGC"/>
                         <outlet property="sendButton" destination="wrQ-9g-zub" id="XTk-I1-JLC"/>
+                        <outlet property="settingsButton" destination="ZlM-dk-hOw" id="iGk-Vt-nTc"/>
                         <outlet property="writeTextView" destination="Z4A-BW-e9S" id="DJF-VM-RsB"/>
                     </connections>
                 </viewController>
