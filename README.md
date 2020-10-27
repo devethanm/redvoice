@@ -3,6 +3,7 @@ iMessage interface used for sending advanced messages.
 
 CODE THAT IS NOT MY OWN:
 
+1.
 https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor
 - Paul Hudson @twostraws
 
@@ -33,5 +34,26 @@ extension UIColor {
 
         return nil
     }
+}
+```
+
+2. 
+https://stackoverflow.com/questions/27880607/how-to-assign-an-action-for-uiimageview-object-in-swift
+Aseider and Naveed Ahmad from Stack Overflow
+```
+override func viewDidLoad()
+{
+    super.viewDidLoad()
+
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+    imageView.isUserInteractionEnabled = true
+    imageView.addGestureRecognizer(tapGestureRecognizer)
+}
+
+@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+{
+    let tappedImage = tapGestureRecognizer.view as! UIImageView
+
+    // Your action
 }
 ```
