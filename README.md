@@ -39,7 +39,7 @@ extension UIColor {
 
 2. 
 https://stackoverflow.com/questions/27880607/how-to-assign-an-action-for-uiimageview-object-in-swift
-Aseider and Naveed Ahmad from Stack Overflow
+- Aseider and Naveed Ahmad from Stack Overflow
 ```
 override func viewDidLoad()
 {
