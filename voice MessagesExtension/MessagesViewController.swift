@@ -49,8 +49,11 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var clearButton: UIButton!
 	@IBOutlet weak var genButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
+	// these two "buttons" are actually UIImageViews
 	@IBOutlet weak var settingsButton: UIImageView!
+	@IBOutlet weak var infoButton: UIImageView!
 	
+	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
 	var selectedAlgorithm = "*^!"
 
@@ -73,7 +76,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		}
 	}
 	
-	// handles press on the settings button
+	// handles press on the settings button / picture
 	@IBAction func settingsButtonPressed() {
 		let vc = storyboard?.instantiateViewController(withIdentifier: "settings")
 		vc?.modalPresentationStyle = .fullScreen
@@ -129,9 +132,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 	
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		// variable to indicate which image was tapped
 		let tappedImage = tapGestureRecognizer.view as! UIImageView
-		// if an image is tapped we call this method
-		settingsButtonPressed()
+		// if the settings button is tapped we call this method
+		if tappedImage == settingsButton {
+			settingsButtonPressed()
+		}
 	}
     
     
