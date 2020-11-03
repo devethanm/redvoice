@@ -12,6 +12,7 @@ import Messages
 var generator = Generate()
 
 extension UIColor {
+	// hex color converter
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
 
@@ -48,7 +49,11 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var clearButton: UIButton!
 	@IBOutlet weak var genButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
+	// these two "buttons" are actually UIImageViews
+	@IBOutlet weak var settingsButton: UIImageView!
+	@IBOutlet weak var infoButton: UIImageView!
 	
+	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
 	var selectedAlgorithm = "*^!"
 
@@ -69,6 +74,13 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		else {
 			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text))
 		}
+	}
+	
+	// handles press on the settings button / picture
+	@IBAction func settingsButtonPressed() {
+		let vc = storyboard?.instantiateViewController(withIdentifier: "settings")
+		vc?.modalPresentationStyle = .fullScreen
+		present(vc!,animated: true)
 	}
 	
 	
@@ -118,8 +130,15 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		selectedAlgorithm = algorithms[row]
     }
-    
-    
+	
+	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		// variable to indicate which image was tapped
+		let tappedImage = tapGestureRecognizer.view as! UIImageView
+		// if the settings button is tapped we call this method
+		if tappedImage == settingsButton {
+			settingsButtonPressed()
+		}
+	}
     
     
     override func viewDidLoad() {
@@ -129,15 +148,19 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		pickerView.delegate = self
 		pickerView.dataSource = self
 		writeTextView.delegate = self
-
 		
+		// setup settingsButton gesture recognizer
+		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+		settingsButton.isUserInteractionEnabled = true
+		settingsButton.addGestureRecognizer(tapGestureRecognizer)
+		
+		// add done button to dismiss keyboard
 		self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 		
 		//writeTextView.alwaysBounceVertical = true
-        
         /*
          STYLING
-         */
+		*/
 		pickerView.frame = CGRect(x: 0, y: 30, width: 100, height: 100)
 		pickerView.center = self.view.center
 		//pickerView.layer.borderColor = UIColor.purple.cgColor
