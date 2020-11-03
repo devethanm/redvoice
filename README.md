@@ -1,7 +1,15 @@
 # voice
 iMessage interface used for sending advanced messages.
 
-CODE THAT IS NOT MY OWN:
+---
+**OUTSOURCED ASSETS:**
+
+1.
+Settings and info icons provied by 
+https://hotpot.ai/blog/sf-symbols-online
+
+---
+**CODE THAT IS NOT MY OWN:**
 
 1.
 https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor
@@ -57,3 +65,5 @@ override func viewDidLoad()
     // Your action
 }
 ```
+
+---
