@@ -83,6 +83,13 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		present(vc!,animated: true)
 	}
 	
+	// handles press on the info button / picture
+	@IBAction func infoButtonPressed() {
+		let vc = storyboard?.instantiateViewController(withIdentifier: "info")
+		vc?.modalPresentationStyle = .fullScreen
+		present(vc!,animated: true)
+	}
+	
 	
 	// var declaration because users will be able to
     // add their own algorithms
@@ -132,11 +139,16 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 	
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		print("HELLO")
 		// variable to indicate which image was tapped
 		let tappedImage = tapGestureRecognizer.view as! UIImageView
+		print(tappedImage)
 		// if the settings button is tapped we call this method
 		if tappedImage == settingsButton {
 			settingsButtonPressed()
+		}
+		else if tappedImage == infoButton {
+			infoButtonPressed()
 		}
 	}
     
@@ -150,10 +162,15 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		writeTextView.delegate = self
 		
 		// setup settingsButton gesture recognizer
-		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-		settingsButton.isUserInteractionEnabled = true
-		settingsButton.addGestureRecognizer(tapGestureRecognizer)
+		let settingsTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		
+		let infoTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+		
+		infoButton.isUserInteractionEnabled = true
+		infoButton.addGestureRecognizer(infoTapGestureRecognizer)
+		settingsButton.isUserInteractionEnabled = true
+		settingsButton.addGestureRecognizer(settingsTapGestureRecognizer)
+	
 		// add done button to dismiss keyboard
 		self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 		

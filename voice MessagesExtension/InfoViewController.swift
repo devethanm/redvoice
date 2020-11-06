@@ -1,15 +1,15 @@
 //
-//  SettingsViewController.swift
+//  InfoViewController.swift
 //  voice MessagesExtension
 //
-//  Created by Ethan Maestas on 10/15/20.
+//  Created by Ethan Maestas on 11/5/20.
 //  Copyright © 2020 Ethan Maestas. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class InfoViewController: UIViewController {
+	
 	@IBOutlet weak var exitButton: UIImageView!
 	
 	// handles press on the exit button / picture
@@ -30,8 +30,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		
-		// setup settingsButton gesture recognizer
+
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)

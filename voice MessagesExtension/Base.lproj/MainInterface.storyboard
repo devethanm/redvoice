@@ -12,7 +12,7 @@
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="voice_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="ObA-dk-sSI" customClass="MessagesViewController" customModule="voice_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
@@ -128,25 +128,25 @@
                                 </connections>
                             </pickerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZlM-dk-hOw">
-                                <rect key="frame" x="288" y="49.333333333333329" width="20" height="20.333333333333329"/>
+                                <rect key="frame" x="283" y="49.333333333333329" width="25" height="24.333333333333329"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="gha-bd-J63"/>
-                                    <constraint firstAttribute="width" constant="20" id="xeN-Nc-ei3"/>
+                                    <constraint firstAttribute="height" constant="25" id="gha-bd-J63"/>
+                                    <constraint firstAttribute="width" constant="25" id="xeN-Nc-ei3"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-88-AWb">
-                                <rect key="frame" x="12" y="50" width="20" height="19.666666666666671"/>
+                                <rect key="frame" x="12" y="50" width="25" height="23.666666666666671"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ce0-Es-a3b"/>
-                                    <constraint firstAttribute="width" constant="20" id="eCo-Dv-byh"/>
+                                    <constraint firstAttribute="height" constant="25" id="Ce0-Es-a3b"/>
+                                    <constraint firstAttribute="width" constant="25" id="eCo-Dv-byh"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -203,7 +203,7 @@
                         <outlet property="pickerView" destination="wP5-Cy-slw" id="hnT-Wb-Wud"/>
                         <outlet property="previewTextView" destination="5wy-CW-WkJ" id="h9e-5a-GGC"/>
                         <outlet property="sendButton" destination="wrQ-9g-zub" id="XTk-I1-JLC"/>
-                        <outlet property="settingsButton" destination="ZlM-dk-hOw" id="iGk-Vt-nTc"/>
+                        <outlet property="settingsButton" destination="ZlM-dk-hOw" id="HhL-u3-Gb9"/>
                         <outlet property="writeTextView" destination="Z4A-BW-e9S" id="DJF-VM-RsB"/>
                     </connections>
                 </viewController>
@@ -218,18 +218,74 @@
                     <view key="view" contentMode="scaleToFill" id="8I2-4x-y9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CQr-oL-mew">
+                                <rect key="frame" x="335" y="50" width="25" height="23.666666666666671"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="8Zj-x3-hLr"/>
+                                    <constraint firstAttribute="height" constant="25" id="s97-WE-0C6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
+                            <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="exitButton" destination="CQr-oL-mew" id="6fB-BI-p9h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOt-Sg-4MX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="638" y="0.0"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="q5T-vb-xCj">
+            <objects>
+                <viewController storyboardIdentifier="info" id="qFZ-Ze-Wuj" customClass="InfoViewController" customModule="voice_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vkc-2z-uAF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyW-ap-nE4">
+                                <rect key="frame" x="335" y="50" width="25" height="23.666666666666671"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="4pm-Ah-H8T"/>
+                                    <constraint firstAttribute="height" constant="25" id="mbo-Il-DoN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g04-yD-o1N"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="xyW-ap-nE4" firstAttribute="top" secondItem="g04-yD-o1N" secondAttribute="top" constant="5" id="KBa-ce-SNI"/>
+                            <constraint firstItem="g04-yD-o1N" firstAttribute="trailing" secondItem="xyW-ap-nE4" secondAttribute="trailing" constant="15" id="bhd-d8-2WQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exitButton" destination="xyW-ap-nE4" id="tzp-yz-ZhK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hw-sX-9Oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="8"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
