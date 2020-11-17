@@ -244,21 +244,33 @@
                                     <constraint firstAttribute="height" constant="25" id="s97-WE-0C6"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-hm-vqF">
+                                <rect key="frame" x="37" y="99" width="301" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Z6x-dU-6SQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="jv1-Fz-6bg"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
+                            <constraint firstItem="Cir-hm-vqF" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="55" id="A1w-5J-nCe"/>
+                            <constraint firstItem="Cir-hm-vqF" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="WLd-54-GbN"/>
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
+                            <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="Cir-hm-vqF" secondAttribute="trailing" constant="37" id="ecD-3h-Jpi"/>
+                            <constraint firstItem="Cir-hm-vqF" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="37" id="lfu-K7-Bm1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="exitButton" destination="CQr-oL-mew" id="6fB-BI-p9h"/>
+                        <outlet property="verticalStack" destination="Cir-hm-vqF" id="ZJJ-4A-r8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOt-Sg-4MX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="0.0"/>
+            <point key="canvasLocation" x="637.60000000000002" y="0.0"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="q5T-vb-xCj">

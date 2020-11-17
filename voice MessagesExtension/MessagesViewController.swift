@@ -140,10 +140,8 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 	
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-		print("HELLO")
 		// variable to indicate which image was tapped
 		let tappedImage = tapGestureRecognizer.view as! UIImageView
-		print(tappedImage)
 		// if the settings button is tapped we call this method
 		if tappedImage == settingsButton {
 			settingsButtonPressed()
@@ -157,6 +155,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		/*TODO:
+			On load append all algorithms from settings to the algorithms array
+		*/
 		
 		pickerView.delegate = self
 		pickerView.dataSource = self

@@ -10,7 +10,10 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+	var algorithms = ["*^!", "original", "no words", "halloween"]
+
 	@IBOutlet weak var exitButton: UIImageView!
+	@IBOutlet weak var verticalStack: UIStackView!
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
@@ -26,6 +29,23 @@ class SettingsViewController: UIViewController {
 		}
 	}
 	
+	func configureStackView() {
+		verticalStack.distribution = .fillEqually
+		verticalStack.spacing = 5
+		//verticalStack.alignment = UIStackView.Alignment .fill
+	}
+	
+	func addStackViewElements() {
+		
+		for i in 0...algorithms.count-1 {
+			let label = UILabel(frame: CGRect(x: 500, y: 500, width: 500, height: 500))
+			label.text = algorithms[i]
+			label.textAlignment = NSTextAlignment .center
+			verticalStack.addArrangedSubview(label)
+		}
+	
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +55,9 @@ class SettingsViewController: UIViewController {
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
+		
+		configureStackView()
+		addStackViewElements()
     }
     
 
