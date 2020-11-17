@@ -44,6 +44,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     
     @IBOutlet weak var pickerLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+	@IBOutlet weak var writeTextHereLabel: UILabel!
 	@IBOutlet weak var writeTextView: UITextView!
 	@IBOutlet weak var previewTextView: UITextView!
 	@IBOutlet weak var clearButton: UIButton!
@@ -195,6 +196,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         requestPresentationStyle(.expanded)
+		writeTextHereLabel.isHidden = true
     }
     
 	@objc func tapDone(sender: Any) {
