@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-	var algorithms = ["*^!", "original", "no words", "halloween", "afsfsdfa", "dfaf", "dfeg", "erwr32", "3rfvvs", "af324sfsdfa", "df234234af", "df23eg", "erwr232", "3rfvv6s", "halloween", "afsfsdfa", "dfaf", "dfeg", "erwr32", "3rfvvs", "af324sfsdfa", "df234234af", "df23eg", "erwr232", "3rfvv6s", "halloween", "afsfsdfa", "dfaf", "dfeg", "erwr32", "3rfvvs", "af324sfsdfa", "df234234af", "df23eg", "erwr232", "3rfvv6s", "halloween", "afsfsdfa", "dfaf", "dfeg", "erwr32", "3rfvvs", "af324sfsdfa", "df234234af", "df23eg", "erwr232", "3rfvv6s"]
+	var algorithms = ["*^!", "original", "no words", "halloween"]
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var verticalStack: UIStackView!
@@ -30,8 +30,8 @@ class SettingsViewController: UIViewController {
 	}
 	
 	func configureStackView() {
-		verticalStack.distribution = .fillEqually
-		verticalStack.spacing = 0
+		//verticalStack.distribution = .fillEqually
+		//verticalStack.spacing = 0
 		//verticalStack.alignment = UIStackView.Alignment .fill
 	}
 	
