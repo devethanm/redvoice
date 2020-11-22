@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-	var algorithms = ["*^!", "original", "no words", "halloween"]
+	var algorithms = ["*^!", "original", "no words", "halloween", "afsfsdfa", "dfaf", "dfeg", "erwr32", "3rfvvs", "af324sfsdfa", "df234234af", "df23eg", "erwr232", "3rfvv6s"]
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var verticalStack: UIStackView!

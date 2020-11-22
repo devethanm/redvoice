@@ -244,23 +244,44 @@
                                     <constraint firstAttribute="height" constant="25" id="s97-WE-0C6"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-hm-vqF">
-                                <rect key="frame" x="37" y="99" width="301" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALGORITHMS:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-y7-MbR">
+                                <rect key="frame" x="126" y="94" width="123" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-0.5" height="-1"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccR-Nl-LYh">
+                                <rect key="frame" x="0.0" y="120" width="375" height="157"/>
+                                <subviews>
+                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-hm-vqF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Z6x-dU-6SQ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="jv1-Fz-6bg"/>
+                                    <constraint firstItem="Cir-hm-vqF" firstAttribute="top" secondItem="ccR-Nl-LYh" secondAttribute="top" id="Umg-yB-eGP"/>
+                                    <constraint firstItem="Cir-hm-vqF" firstAttribute="leading" secondItem="ccR-Nl-LYh" secondAttribute="leading" id="XCC-Wk-zMZ"/>
+                                    <constraint firstItem="Cir-hm-vqF" firstAttribute="centerY" secondItem="ccR-Nl-LYh" secondAttribute="centerY" id="Zwk-zx-aJl"/>
+                                    <constraint firstItem="Cir-hm-vqF" firstAttribute="width" secondItem="ccR-Nl-LYh" secondAttribute="width" id="c6w-5M-aq7"/>
+                                    <constraint firstAttribute="height" constant="157" id="fTU-aC-Zbe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cir-hm-vqF" secondAttribute="trailing" id="nbT-fd-bIa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cir-hm-vqF" secondAttribute="bottom" constant="10" id="nly-Zy-JCR"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
-                            <constraint firstItem="Cir-hm-vqF" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="55" id="A1w-5J-nCe"/>
-                            <constraint firstItem="Cir-hm-vqF" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="WLd-54-GbN"/>
+                            <constraint firstItem="edB-y7-MbR" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="5w2-fa-bhx"/>
+                            <constraint firstItem="edB-y7-MbR" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="50" id="PnC-B8-kAB"/>
+                            <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="ccR-Nl-LYh" secondAttribute="trailing" id="Taw-TF-V4f"/>
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
-                            <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="Cir-hm-vqF" secondAttribute="trailing" constant="37" id="ecD-3h-Jpi"/>
-                            <constraint firstItem="Cir-hm-vqF" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="37" id="lfu-K7-Bm1"/>
+                            <constraint firstItem="ccR-Nl-LYh" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" id="gY4-JA-lZW"/>
+                            <constraint firstItem="ccR-Nl-LYh" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" id="hM4-tH-l4A"/>
+                            <constraint firstItem="ccR-Nl-LYh" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="l4Z-kv-toc"/>
                         </constraints>
                     </view>
                     <connections>
