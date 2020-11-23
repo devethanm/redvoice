@@ -2,6 +2,12 @@
 iMessage interface used for sending advanced messages.
 
 ---
+**USEFUL RESOURCES**
+
+1.
+https://stevenpcurtis.medium.com/create-a-uistackview-in-a-uiscrollview-e2a959fa061
+
+---
 **OUTSOURCED ASSETS:**
 
 1.
