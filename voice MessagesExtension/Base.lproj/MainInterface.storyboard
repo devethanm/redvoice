@@ -281,10 +281,6 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
-                                <rect key="frame" x="59" y="331" width="179" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-eX-59C">
                                 <rect key="frame" x="203" y="297" width="156" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -313,14 +309,21 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ky8-Ny-B2k"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
-                                <rect key="frame" x="16" y="72" width="171" height="102"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
+                                <rect key="frame" x="16" y="75.333333333333329" width="171" height="101.99999999999999"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="mnH-ch-nBR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J87-f5-prc">
+                                <rect key="frame" x="188" y="75.333333333333329" width="171" height="101.99999999999999"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J87-f5-prc">
-                                <rect key="frame" x="188" y="72" width="171" height="102"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
+                                <rect key="frame" x="30" y="331" width="179" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
@@ -331,6 +334,7 @@
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="edB-y7-MbR" secondAttribute="trailing" constant="126" id="8pc-Yu-ri8"/>
                             <constraint firstItem="J87-f5-prc" firstAttribute="leading" secondItem="9iH-w3-yUI" secondAttribute="trailing" constant="1" id="ADn-5w-FPI"/>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="D8z-Dj-LGb"/>
+                            <constraint firstItem="J87-f5-prc" firstAttribute="height" secondItem="9iH-w3-yUI" secondAttribute="height" id="FBK-ct-cjN"/>
                             <constraint firstItem="9iH-w3-yUI" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="16" id="Nh0-bn-qZk"/>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="QWo-Dy-7PZ"/>
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
