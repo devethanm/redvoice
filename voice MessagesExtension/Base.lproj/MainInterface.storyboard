@@ -281,49 +281,72 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-eX-59C">
-                                <rect key="frame" x="203" y="297" width="156" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="titleShadowOffset" width="-1" height="-1"/>
-                                <state key="normal" title="Edit Algorithm">
-                                    <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="aCm-yp-GVv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-r3-1Jn">
-                                <rect key="frame" x="203" y="331" width="156" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="titleShadowOffset" width="-1" height="-1"/>
-                                <state key="normal" title="Remove Algorithm">
-                                    <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ky8-Ny-B2k"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
                                 <rect key="frame" x="16" y="75.333333333333329" width="171" height="101.99999999999999"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="102"/>
+                                    </pickerView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="JKm-zg-QmZ" firstAttribute="leading" secondItem="9iH-w3-yUI" secondAttribute="leading" id="OF4-6J-zYY"/>
+                                    <constraint firstItem="JKm-zg-QmZ" firstAttribute="top" secondItem="9iH-w3-yUI" secondAttribute="top" id="Pze-xU-C0k"/>
+                                    <constraint firstAttribute="bottom" secondItem="JKm-zg-QmZ" secondAttribute="bottom" id="e4A-jS-BZr"/>
                                     <constraint firstAttribute="height" constant="102" id="mnH-ch-nBR"/>
+                                    <constraint firstAttribute="trailing" secondItem="JKm-zg-QmZ" secondAttribute="trailing" id="njP-ps-4tE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J87-f5-prc">
                                 <rect key="frame" x="188" y="75.333333333333329" width="171" height="101.99999999999999"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-eX-59C">
+                                        <rect key="frame" x="7" y="30" width="156" height="17"/>
+                                        <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="4UB-Ta-6aU"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="FYR-dD-J2U"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="-1" height="-1"/>
+                                        <state key="normal" title="Edit Algorithm">
+                                            <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="aCm-yp-GVv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-r3-1Jn">
+                                        <rect key="frame" x="7" y="55" width="156" height="17"/>
+                                        <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="EFD-zD-VwW"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Qbj-uY-EvW"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="-1" height="-1"/>
+                                        <state key="normal" title="Remove Algorithm">
+                                            <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ky8-Ny-B2k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="N16-eX-59C" firstAttribute="leading" secondItem="J87-f5-prc" secondAttribute="leading" constant="7" id="N3p-aK-Qqa"/>
+                                    <constraint firstAttribute="trailing" secondItem="N16-eX-59C" secondAttribute="trailing" constant="8" id="VWq-FW-2pb"/>
+                                    <constraint firstItem="nRw-r3-1Jn" firstAttribute="width" secondItem="N16-eX-59C" secondAttribute="width" id="Wn9-8u-Q0r"/>
+                                    <constraint firstItem="N16-eX-59C" firstAttribute="top" secondItem="J87-f5-prc" secondAttribute="top" constant="30" id="Y17-Qk-CsU"/>
+                                    <constraint firstItem="nRw-r3-1Jn" firstAttribute="height" secondItem="N16-eX-59C" secondAttribute="height" id="YCs-lu-d4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="nRw-r3-1Jn" secondAttribute="trailing" constant="8" id="bzM-7H-RxY"/>
+                                    <constraint firstItem="nRw-r3-1Jn" firstAttribute="leading" secondItem="J87-f5-prc" secondAttribute="leading" constant="7" id="clD-f4-vQm"/>
+                                    <constraint firstAttribute="bottom" secondItem="nRw-r3-1Jn" secondAttribute="bottom" constant="30" id="eL5-Xj-kdR"/>
+                                </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
-                                <rect key="frame" x="30" y="331" width="179" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
