@@ -254,14 +254,14 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-1v-iyp">
-                                <rect key="frame" x="16" y="103" width="343" height="100"/>
+                                <rect key="frame" x="16" y="88.333333333333314" width="343" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-Ol-8DV">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-Ti-6DF">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Edit Algorithms"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -286,7 +286,7 @@
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
                             <constraint firstItem="Z2J-1v-iyp" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="Z39-bV-4NC"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
-                            <constraint firstItem="Z2J-1v-iyp" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" constant="7.6699999999999999" id="btz-5v-aOG"/>
+                            <constraint firstItem="Z2J-1v-iyp" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" constant="-7" id="btz-5v-aOG"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="Z2J-1v-iyp" secondAttribute="trailing" constant="16" id="joj-dX-yMa"/>
                             <constraint firstItem="Z2J-1v-iyp" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="16" id="uz3-tG-aae"/>
                         </constraints>
