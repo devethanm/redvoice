@@ -38,10 +38,11 @@ class SettingsViewController: UIViewController {
 	func addStackViewElements() {
 		
 		for i in 0...algorithms.count-1 {
-			let label = UILabel(frame: CGRect(x: 500, y: 500, width: 500, height: 500))
-			label.text = algorithms[i]
-			label.textAlignment = NSTextAlignment .center
-			verticalStack.addArrangedSubview(label)
+			let button = UIButton(type: UIButton.ButtonType.system)
+			button.setTitle(algorithms[i], for: .normal)
+			button.isUserInteractionEnabled = true
+			//button.textAlignment = NSTextAlignment .center
+			verticalStack.addArrangedSubview(button)
 		}
 		
 	}
