@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-	var algorithms = ["*^!", "original", "no words", "halloween"]
+	var algorithms = ["*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var verticalStack: UIStackView!
@@ -43,7 +43,7 @@ class SettingsViewController: UIViewController {
 			label.textAlignment = NSTextAlignment .center
 			verticalStack.addArrangedSubview(label)
 		}
-	
+		
 	}
 	
     override func viewDidLoad() {
