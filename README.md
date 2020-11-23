@@ -5,7 +5,12 @@ iMessage interface used for sending advanced messages.
 **USEFUL RESOURCES**
 
 1.
+- Creating a scrollable stackview
 https://stevenpcurtis.medium.com/create-a-uistackview-in-a-uiscrollview-e2a959fa061
+
+2.
+- Programatically creating a stackview
+https://www.youtube.com/watch?v=_DADWRicrGU&t=522s
 
 ---
 **OUTSOURCED ASSETS:**
