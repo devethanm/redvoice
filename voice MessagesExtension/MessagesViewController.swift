@@ -51,6 +51,8 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var genButton: UIButton!
 	@IBOutlet weak var sendButton: UIButton!
 	// these two "buttons" are actually UIImageViews
+	// using gesture recognizer to handle taps
+	// gesture recognizers are added in viewDidLoad()
 	@IBOutlet weak var settingsButton: UIImageView!
 	@IBOutlet weak var infoButton: UIImageView!
 	

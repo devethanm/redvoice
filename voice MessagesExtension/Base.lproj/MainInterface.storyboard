@@ -244,7 +244,7 @@
                                     <constraint firstAttribute="height" constant="25" id="s97-WE-0C6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALGORITHMS:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-y7-MbR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-y7-MbR">
                                 <rect key="frame" x="126" y="49" width="123" height="26.333333333333329"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
@@ -275,6 +275,7 @@
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
                                         <rect key="frame" x="0.0" y="0.0" width="171" height="102"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -376,7 +377,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="algPickerView" destination="JKm-zg-QmZ" id="kYN-ba-AIg"/>
+                        <outlet property="createButton" destination="FVn-La-bNs" id="1zx-RF-E6t"/>
+                        <outlet property="defaultsButton" destination="a0R-nj-Ifn" id="jtk-Qn-hsq"/>
+                        <outlet property="editButton" destination="N16-eX-59C" id="2hi-Md-FPM"/>
                         <outlet property="exitButton" destination="CQr-oL-mew" id="6fB-BI-p9h"/>
+                        <outlet property="removeButton" destination="nRw-r3-1Jn" id="rs1-hg-Ch4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOt-Sg-4MX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

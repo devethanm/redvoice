@@ -8,12 +8,16 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
 	var masterAlgorithms = ["*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
 
 	@IBOutlet weak var exitButton: UIImageView!
-	@IBOutlet weak var verticalStack: UIStackView!
+	@IBOutlet weak var algPickerView: UIPickerView!
+	@IBOutlet weak var editButton: UIButton!
+	@IBOutlet weak var removeButton: UIButton!
+	@IBOutlet weak var defaultsButton: UIButton!
+	@IBOutlet weak var createButton: UIButton!
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
@@ -29,25 +33,43 @@ class SettingsViewController: UIViewController {
 		}
 	}
 	
-	func configureStackView() {
-		//verticalStack.distribution = .fillEqually
-		//verticalStack.spacing = 0
-		//verticalStack.alignment = UIStackView.Alignment .fill
+	func numberOfComponents( in pickerView: UIPickerView ) -> Int {
+			return 1 //keep this as 1
 	}
 	
-	func addStackViewElements() {
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return masterAlgorithms[row]
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return masterAlgorithms.count
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+		return 30
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+		return 100
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 		
-		/*
-		for i in 0...algorithms.count-1 {
+		let view = UIView()
+		//let view = UIView( frame: CGRect( x: 0, y: 0, width: UIScreen.main.bounds.width - 100, height: 60 ) )
+		view.frame = CGRect(x: 0,y: 0,width: 100,height: 20)
 		
-			let button = UIButton(type: UIButton.ButtonType.system)
-			button.setTitle(algorithms[i], for: .normal)
-			button.isUserInteractionEnabled = true
-			//button.textAlignment = NSTextAlignment .center
-			verticalStack.addArrangedSubview(button)
-		}
-		*/
-		// This was used for adding elements to stackview i
+		let label = UILabel()
+		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
+		
+		label.frame = CGRect(x: 0,y: 0,width: 100,height: 20)
+		label.text = masterAlgorithms[row]
+		label.textColor = .white
+		label.textAlignment = .center
+		label.font = .systemFont(ofSize: 16, weight: .bold)
+		view.addSubview( label )
+
+		return view
 	}
 	
     override func viewDidLoad() {
@@ -55,13 +77,16 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 		
+		algPickerView.delegate = self
+		algPickerView.dataSource = self
+		
 		// setup settingsButton gesture recognizer
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
 		
-		configureStackView()
-		addStackViewElements()
+		
+		
     }
     
 
