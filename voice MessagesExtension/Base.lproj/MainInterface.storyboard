@@ -254,7 +254,7 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-nj-Ifn">
-                                <rect key="frame" x="95.666666666666686" y="182.33333333333334" width="184" height="15"/>
+                                <rect key="frame" x="95.666666666666657" y="182.33333333333331" width="184" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -268,7 +268,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-La-bNs">
-                                <rect key="frame" x="100.66666666666669" y="204.33333333333334" width="174" height="15"/>
+                                <rect key="frame" x="100.66666666666666" y="204.33333333333331" width="174" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -281,13 +281,13 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tx5-bf-nav">
-                                <rect key="frame" x="16" y="73" width="172" height="101"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
+                                <rect key="frame" x="59" y="331" width="179" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-eX-59C">
-                                <rect key="frame" x="196" y="124" width="129" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="203" y="297" width="156" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -300,8 +300,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-r3-1Jn">
-                                <rect key="frame" x="196" y="101" width="129" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="203" y="331" width="156" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -313,16 +313,31 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ky8-Ny-B2k"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
+                                <rect key="frame" x="16" y="72" width="171" height="102"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J87-f5-prc">
+                                <rect key="frame" x="188" y="72" width="171" height="102"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="126" id="2yM-sJ-PZk"/>
+                            <constraint firstItem="9iH-w3-yUI" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" id="4iu-bH-SBB"/>
+                            <constraint firstItem="J87-f5-prc" firstAttribute="leading" secondItem="9iH-w3-yUI" secondAttribute="trailing" constant="1" id="4qY-pH-Oba"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="edB-y7-MbR" secondAttribute="trailing" constant="126" id="8pc-Yu-ri8"/>
+                            <constraint firstItem="J87-f5-prc" firstAttribute="leading" secondItem="9iH-w3-yUI" secondAttribute="trailing" constant="1" id="ADn-5w-FPI"/>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="D8z-Dj-LGb"/>
+                            <constraint firstItem="9iH-w3-yUI" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="16" id="Nh0-bn-qZk"/>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="QWo-Dy-7PZ"/>
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
+                            <constraint firstItem="J87-f5-prc" firstAttribute="width" secondItem="9iH-w3-yUI" secondAttribute="width" id="d25-9x-eKP"/>
+                            <constraint firstItem="J87-f5-prc" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" id="ghJ-di-RB7"/>
+                            <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="J87-f5-prc" secondAttribute="trailing" constant="16" id="oSA-c7-ZPb"/>
                         </constraints>
                     </view>
                     <connections>

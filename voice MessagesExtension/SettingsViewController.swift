@@ -37,14 +37,17 @@ class SettingsViewController: UIViewController {
 	
 	func addStackViewElements() {
 		
+		/*
 		for i in 0...algorithms.count-1 {
+		
 			let button = UIButton(type: UIButton.ButtonType.system)
 			button.setTitle(algorithms[i], for: .normal)
 			button.isUserInteractionEnabled = true
 			//button.textAlignment = NSTextAlignment .center
 			verticalStack.addArrangedSubview(button)
 		}
-		
+		*/
+		// This was used for adding elements to stackview i
 	}
 	
     override func viewDidLoad() {
