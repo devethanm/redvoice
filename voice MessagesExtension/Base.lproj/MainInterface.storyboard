@@ -245,7 +245,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALGORITHMS:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-y7-MbR">
-                                <rect key="frame" x="126" y="69" width="123" height="26.333333333333329"/>
+                                <rect key="frame" x="126" y="49" width="123" height="26.333333333333329"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,7 +254,7 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-1v-iyp">
-                                <rect key="frame" x="16" y="88.333333333333314" width="343" height="100"/>
+                                <rect key="frame" x="16" y="68.333333333333329" width="343" height="99.999999999999986"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-Ol-8DV">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -275,15 +275,34 @@
                                     <constraint firstItem="nVw-Ol-8DV" firstAttribute="top" secondItem="Z2J-1v-iyp" secondAttribute="top" id="zdg-bS-byt"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-nj-Ifn">
+                                <rect key="frame" x="95.666666666666686" y="176" width="184" height="15"/>
+                                <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="JuF-rx-HTo"/>
+                                </constraints>
+                                <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="Restore Default Algorithms">
+                                    <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="P6T-eU-38d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmh-hy-CMx"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="126" id="2yM-sJ-PZk"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="edB-y7-MbR" secondAttribute="trailing" constant="126" id="8pc-Yu-ri8"/>
-                            <constraint firstItem="edB-y7-MbR" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="25" id="D8z-Dj-LGb"/>
+                            <constraint firstItem="edB-y7-MbR" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="D8z-Dj-LGb"/>
+                            <constraint firstItem="a0R-nj-Ifn" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="HLS-I4-iTN"/>
+                            <constraint firstItem="a0R-nj-Ifn" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="MP6-bU-AU9"/>
                             <constraint firstItem="edB-y7-MbR" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="QWo-Dy-7PZ"/>
                             <constraint firstItem="CQr-oL-mew" firstAttribute="top" secondItem="tmh-hy-CMx" secondAttribute="top" constant="5" id="YHr-9c-Hha"/>
+                            <constraint firstItem="a0R-nj-Ifn" firstAttribute="top" secondItem="Z2J-1v-iyp" secondAttribute="bottom" constant="7.6699999999999999" id="YzA-k3-xef"/>
                             <constraint firstItem="Z2J-1v-iyp" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="Z39-bV-4NC"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="CQr-oL-mew" secondAttribute="trailing" constant="15" id="a5B-Kc-GPX"/>
                             <constraint firstItem="Z2J-1v-iyp" firstAttribute="top" secondItem="edB-y7-MbR" secondAttribute="bottom" constant="-7" id="btz-5v-aOG"/>
