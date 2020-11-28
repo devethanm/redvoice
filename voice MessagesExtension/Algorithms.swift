@@ -35,9 +35,9 @@ public class Generate {
 			
 			return returnText
 		}
-		else if algorithm == "original" {
+		else if algorithm == "RED" {
 			
-			symbols = ["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "ok!", "slatt", "!"]
+			symbols = ["💔", "🖤", "🧛🏿‍♂️", "💋", "!"]
 			
 			returnText += symbols.randomElement() ?? " "
 			returnText += " "

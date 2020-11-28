@@ -96,7 +96,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// var declaration because users will be able to
     // add their own algorithms
-    var algorithms = ["*^!", "original", "no words", "halloween"]
+    var algorithms = ["*^!", "RED", "no words", "halloween"]
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1 //keep this as 1

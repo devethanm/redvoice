@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+	
+	let defaultAlgorithms = ["default", "placeholder"]
+	
 	var masterAlgorithms = ["*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
 
 	@IBOutlet weak var exitButton: UIImageView!
