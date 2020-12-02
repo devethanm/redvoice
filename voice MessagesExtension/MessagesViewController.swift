@@ -58,7 +58,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
-	var selectedAlgorithm = "*^!"
+	var selectedAlgorithm = ""
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
@@ -195,6 +195,8 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
+		
+		selectedAlgorithm = algorithms[0]
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {

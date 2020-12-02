@@ -12,7 +12,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	
 	let defaultAlgorithms = ["default", "placeholder"]
 	
-	var masterAlgorithms = ["*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
+	var masterAlgorithms = ["*^!", "original", "OIJFOISJGOSIGJSEOGIJSG", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
+	var selectedAlgorithm = 0
+
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var algPickerView: UIPickerView!
@@ -21,10 +23,28 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	@IBOutlet weak var defaultsButton: UIButton!
 	@IBOutlet weak var createButton: UIButton!
 	
+	@IBOutlet weak var editView: UIView!
+	@IBOutlet weak var editLabel: UILabel!
+	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
 		dismiss(animated:true, completion: nil)
 	}
+	@IBAction func editButtonPressed(_ sender: Any) {
+		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
+		editView.isHidden = false
+		print("hello edit")
+	}
+	@IBAction func editingFinished(_ sender: Any) {
+		editView.isHidden = true
+	}
+	
+	
+	@IBAction func removeButtonPressed(_ sender: Any) {
+		print("hello")
+	}
+	
+
 	
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 		// variable to indicate which image was tapped
@@ -53,6 +73,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	
 	func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
 		return 100
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		selectedAlgorithm = row
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -87,8 +111,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
 		
+		editView.isHidden = true
 		
-		
+
     }
     
 
