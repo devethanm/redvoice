@@ -81,13 +81,13 @@
                                     <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="PT2-r3-d7z"/>
                                 </connections>
                             </button>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-BW-e9S">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" keyboardDismissMode="interactive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-BW-e9S">
                                 <rect key="frame" x="0.0" y="159" width="160" height="376"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <color key="textColor" red="0.65563452941284062" green="0.32494669331440251" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wy-CW-WkJ">
                                 <rect key="frame" x="160" y="159" width="160" height="376"/>
@@ -212,6 +212,7 @@
                         <outlet property="clearButton" destination="tJO-eH-fbb" id="cH0-r9-noP"/>
                         <outlet property="genButton" destination="P3B-WQ-jgZ" id="uvU-1q-SjP"/>
                         <outlet property="infoButton" destination="FfF-88-AWb" id="6LB-ho-MbF"/>
+                        <outlet property="mainView" destination="zMn-AG-sqS" id="Wzm-Ua-ZI3"/>
                         <outlet property="pickerLabel" destination="yuy-dq-Vj5" id="iPS-8D-N9e"/>
                         <outlet property="pickerView" destination="wP5-Cy-slw" id="hnT-Wb-Wud"/>
                         <outlet property="previewTextView" destination="5wy-CW-WkJ" id="h9e-5a-GGC"/>
@@ -352,7 +353,7 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="328" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-22-2hH">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0BC6CC257D4F420097F89F /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BC6CB257D4F420097F89F /* UserDefaultsManager.swift */; };
 		AA36C2CD24AED8E2005E45A2 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36C2CC24AED8E2005E45A2 /* Algorithms.swift */; };
 		AA390F3A24CD2445004E8B5B /* UITextViewDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA390F3924CD2445004E8B5B /* UITextViewDoneButton.swift */; };
 		AA452A742538C666002ABEC3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA452A732538C666002ABEC3 /* SettingsViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA0BC6CB257D4F420097F89F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		AA36C2CC24AED8E2005E45A2 /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 		AA390F3924CD2445004E8B5B /* UITextViewDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewDoneButton.swift; sourceTree = "<group>"; };
 		AA452A732538C666002ABEC3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				AA556F3124AD2E91003BC124 /* Info.plist */,
 				AA452A732538C666002ABEC3 /* SettingsViewController.swift */,
 				AA490FC12554FA65007D71D2 /* InfoViewController.swift */,
+				AA0BC6CB257D4F420097F89F /* UserDefaultsManager.swift */,
 			);
 			path = "voice MessagesExtension";
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				AA556F2B24AD2E91003BC124 /* MessagesViewController.swift in Sources */,
 				AA36C2CD24AED8E2005E45A2 /* Algorithms.swift in Sources */,
+				AA0BC6CC257D4F420097F89F /* UserDefaultsManager.swift in Sources */,
 				AA390F3A24CD2445004E8B5B /* UITextViewDoneButton.swift in Sources */,
 				AA452A742538C666002ABEC3 /* SettingsViewController.swift in Sources */,
 				AA490FC22554FA65007D71D2 /* InfoViewController.swift in Sources */,
@@ -304,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

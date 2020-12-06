@@ -15,7 +15,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	var masterAlgorithms = ["*^!", "original", "OIJFOISJGOSIGJSEOGIJSG", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
 	var selectedAlgorithm = 0
 
-
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var algPickerView: UIPickerView!
 	@IBOutlet weak var editButton: UIButton!
@@ -33,7 +32,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	@IBAction func editButtonPressed(_ sender: Any) {
 		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
 		editView.isHidden = false
-		print("hello edit")
+		
 	}
 	@IBAction func editingFinished(_ sender: Any) {
 		editView.isHidden = true
@@ -41,7 +40,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
-		print("hello")
+		
 	}
 	
 
@@ -113,7 +112,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 		
 		editView.isHidden = true
 		
-
     }
     
 

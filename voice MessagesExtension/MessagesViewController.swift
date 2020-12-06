@@ -7,9 +7,8 @@
 //
 
 import UIKit
+import SwiftUI
 import Messages
-
-var generator = Generate()
 
 extension UIColor {
 	// hex color converter
@@ -40,9 +39,14 @@ extension UIColor {
     }
 }
 
-class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+
+class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIApplicationDelegate {
     
-    @IBOutlet weak var pickerLabel: UILabel!
+	var manager = UDM.manager
+	let generator = Generator()
+	
+	@IBOutlet var mainView: UIView!
+	@IBOutlet weak var pickerLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
 	@IBOutlet weak var writeTextHereLabel: UILabel!
 	@IBOutlet weak var writeTextView: UITextView!
@@ -58,7 +62,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
-	var selectedAlgorithm = ""
+	var selectedAlgorithm = 0
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
@@ -67,7 +71,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	@IBAction func genButtonPressed(_ sender: Any) {
 		previewTextView.text = ""
-		previewTextView.text = generator.generate( algorithm:selectedAlgorithm, text:writeTextView.text )
+		previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
 	}
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
@@ -75,7 +79,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			self.activeConversation?.insertText(previewTextView.text)
 		}
 		else {
-			self.activeConversation?.insertText(generator.generate(algorithm:selectedAlgorithm,text:writeTextView.text))
+			self.activeConversation?.insertText(generator.generate(algNum:selectedAlgorithm,text:writeTextView.text))
 		}
 	}
 	
@@ -96,7 +100,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// var declaration because users will be able to
     // add their own algorithms
-    var algorithms = ["*^!", "RED", "no words", "halloween"]
+	var algorithms = [String]()
     
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1 //keep this as 1
@@ -138,7 +142,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 	
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		selectedAlgorithm = algorithms[row]
+		selectedAlgorithm = row
     }
 	
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -176,7 +180,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		settingsButton.addGestureRecognizer(settingsTapGestureRecognizer)
 	
 		// add done button to dismiss keyboard
-		self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+		//self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 		
 		//writeTextView.alwaysBounceVertical = true
         /*
@@ -196,19 +200,40 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
 		
-		selectedAlgorithm = algorithms[0]
+		manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
+		
+		manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
+		
+		manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
+		
+		manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
+		
+		manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
+		
+		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        requestPresentationStyle(.expanded)
+        //requestPresentationStyle(.expanded)
 		writeTextHereLabel.isHidden = true
+		requestPresentationStyle(.expanded)
     }
     
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if text == "\n" {
+			writeTextView.resignFirstResponder()
+			requestPresentationStyle(.compact)
+			return false
+		}
+		
+		return true
+	}
+	
 	@objc func tapDone(sender: Any) {
 		
-        requestPresentationStyle(.compact)
-        //writeTextView.resignFirstResponder()
-
+        //requestPresentationStyle(.compact)
+		//writeTextView.outlet.resignFirstResponder()
         //if presentationStyle == .compact {
             
 		//}
@@ -216,6 +241,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//	self.view.endEditing(true)
 
 		//}
+		
 	}
 	
 	
@@ -279,6 +305,8 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		}
 		
     }
+	
+	
     
     //send message function
     func sendMessage(_ message: MSMessage,
@@ -287,3 +315,35 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 
 }
+
+/*
+class AppDelegate: UIResponder, UIApplicationDelegate {
+	
+	let manager = UDM.manager
+	
+	
+	
+	func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+		
+		//manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forUndefinedKey: "algorithms")
+		
+		print("HELLO")
+		print("HELLO")
+		print("HELLO")
+		print("HELLO")
+		print("HELLO")
+		
+		manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
+		
+		manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
+		
+		manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
+		
+		manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
+		
+		manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
+		
+		return true
+	}
+}
+*/
