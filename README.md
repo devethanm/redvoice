@@ -12,6 +12,10 @@ https://stevenpcurtis.medium.com/create-a-uistackview-in-a-uiscrollview-e2a959fa
 - Programatically creating a stackview
 https://www.youtube.com/watch?v=_DADWRicrGU&t=522s
 
+3. 
+- UserDefaults and first time run
+https://medium.com/swlh/how-to-detect-app-first-time-launch-2dbeece7cc7b
+
 ---
 **OUTSOURCED ASSETS:**
 
