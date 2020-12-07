@@ -353,7 +353,7 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="328" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-22-2hH">
@@ -375,16 +375,54 @@
                                             <action selector="editingFinished:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="IGO-nP-pEV"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-8O-bvl">
+                                        <rect key="frame" x="8" y="128" width="117" height="17"/>
+                                        <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="FVY-Ta-Zc7"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="-1" height="-1"/>
+                                        <state key="normal" title="Save Changes">
+                                            <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="nAW-eV-IyH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-8Q-nfh">
+                                        <rect key="frame" x="218" y="128" width="117" height="17"/>
+                                        <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="-1" height="-1"/>
+                                        <state key="normal" title="Discard Changes">
+                                            <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="oVJ-vm-oYx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="a8a-8O-bvl" firstAttribute="leading" secondItem="MLd-Cz-UB7" secondAttribute="leading" constant="8" id="A8J-0T-8Zl"/>
                                     <constraint firstAttribute="trailing" secondItem="ClH-so-fao" secondAttribute="trailing" constant="5" id="Cho-bR-w3i"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGA-8Q-nfh" secondAttribute="trailing" constant="8" id="CuF-pR-hUO"/>
+                                    <constraint firstItem="bGA-8Q-nfh" firstAttribute="width" secondItem="a8a-8O-bvl" secondAttribute="width" id="MV3-V1-yun"/>
                                     <constraint firstAttribute="width" constant="343" id="RGA-dc-wgA"/>
+                                    <constraint firstAttribute="bottom" secondItem="bGA-8Q-nfh" secondAttribute="bottom" constant="8" id="aXn-W1-xC7"/>
                                     <constraint firstItem="BHZ-22-2hH" firstAttribute="top" secondItem="MLd-Cz-UB7" secondAttribute="top" constant="2" id="b6b-U6-OUs"/>
+                                    <constraint firstItem="bGA-8Q-nfh" firstAttribute="height" secondItem="a8a-8O-bvl" secondAttribute="height" id="fyN-zp-eCG"/>
                                     <constraint firstItem="BHZ-22-2hH" firstAttribute="width" secondItem="MLd-Cz-UB7" secondAttribute="width" constant="-96" id="gYh-q6-RBv"/>
                                     <constraint firstAttribute="height" constant="153" id="h8Y-V0-BsF"/>
                                     <constraint firstItem="ClH-so-fao" firstAttribute="top" secondItem="MLd-Cz-UB7" secondAttribute="top" constant="2" id="iKc-CY-gF5"/>
+                                    <constraint firstItem="bGA-8Q-nfh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a8a-8O-bvl" secondAttribute="trailing" constant="8" symbolic="YES" id="lKg-b6-fJZ"/>
+                                    <constraint firstItem="a8a-8O-bvl" firstAttribute="leading" secondItem="MLd-Cz-UB7" secondAttribute="leading" constant="8" id="mrV-bf-7eS"/>
                                     <constraint firstItem="BHZ-22-2hH" firstAttribute="centerX" secondItem="MLd-Cz-UB7" secondAttribute="centerX" id="rid-ay-g7y"/>
+                                    <constraint firstAttribute="bottom" secondItem="a8a-8O-bvl" secondAttribute="bottom" constant="8" id="tTg-D3-8Jp"/>
+                                    <constraint firstAttribute="bottom" secondItem="a8a-8O-bvl" secondAttribute="bottom" constant="8" id="tq0-Pd-66H"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -471,9 +509,6 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
