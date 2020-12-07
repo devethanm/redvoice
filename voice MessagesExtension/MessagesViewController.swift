@@ -40,7 +40,7 @@ extension UIColor {
 }
 
 
-class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIApplicationDelegate {
+class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
 	var manager = UDM.manager
 	let generator = Generator()

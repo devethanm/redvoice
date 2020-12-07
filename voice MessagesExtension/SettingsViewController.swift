@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Messages
 
-class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+	
+	let manager = UDM.manager
 	
 	let defaultAlgorithms = ["default", "placeholder"]
 	
@@ -24,17 +27,36 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	
 	@IBOutlet weak var editView: UIView!
 	@IBOutlet weak var editLabel: UILabel!
+	@IBOutlet weak var editTextField: UITextField!
+	
+	
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
 		dismiss(animated:true, completion: nil)
 	}
+	
 	@IBAction func editButtonPressed(_ sender: Any) {
+		
+		requestPresentationStyle(.expanded)
+		
 		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
+		
+		let selectedAlgorithmString = String(selectedAlgorithm)
+		let algString = "alg" + selectedAlgorithmString + "Symbols"
+		let alg = manager.defaults.stringArray(forKey: algString)!
+		for n in 0...alg.count - 2{
+			editTextField.text! += alg[n] + ", "
+		}
+		editTextField.text! += alg[alg.count-1]
+
+		
 		editView.isHidden = false
 		
 	}
+	
 	@IBAction func editingFinished(_ sender: Any) {
+		requestPresentationStyle(.compact)
 		editView.isHidden = true
 	}
 	

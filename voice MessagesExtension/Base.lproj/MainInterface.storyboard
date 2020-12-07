@@ -353,7 +353,7 @@
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="328" translatesAutoresizingMaskIntoConstraints="NO" id="BHZ-22-2hH">
@@ -387,9 +387,6 @@
                                             <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
-                                        <connections>
-                                            <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="nAW-eV-IyH"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-8Q-nfh">
                                         <rect key="frame" x="218" y="128" width="117" height="17"/>
@@ -400,10 +397,16 @@
                                             <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
-                                        <connections>
-                                            <action selector="clearButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="oVJ-vm-oYx"/>
-                                        </connections>
                                     </button>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="suT-70-O53">
+                                        <rect key="frame" x="8" y="32" width="327" height="30"/>
+                                        <color key="backgroundColor" red="0.6556345294" green="0.32494669329999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="zG4-Wl-Szv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -412,6 +415,7 @@
                                     <constraint firstAttribute="trailing" secondItem="bGA-8Q-nfh" secondAttribute="trailing" constant="8" id="CuF-pR-hUO"/>
                                     <constraint firstItem="bGA-8Q-nfh" firstAttribute="width" secondItem="a8a-8O-bvl" secondAttribute="width" id="MV3-V1-yun"/>
                                     <constraint firstAttribute="width" constant="343" id="RGA-dc-wgA"/>
+                                    <constraint firstItem="suT-70-O53" firstAttribute="top" secondItem="BHZ-22-2hH" secondAttribute="bottom" constant="8" symbolic="YES" id="Ruj-8f-LR2"/>
                                     <constraint firstAttribute="bottom" secondItem="bGA-8Q-nfh" secondAttribute="bottom" constant="8" id="aXn-W1-xC7"/>
                                     <constraint firstItem="BHZ-22-2hH" firstAttribute="top" secondItem="MLd-Cz-UB7" secondAttribute="top" constant="2" id="b6b-U6-OUs"/>
                                     <constraint firstItem="bGA-8Q-nfh" firstAttribute="height" secondItem="a8a-8O-bvl" secondAttribute="height" id="fyN-zp-eCG"/>
@@ -420,7 +424,9 @@
                                     <constraint firstItem="ClH-so-fao" firstAttribute="top" secondItem="MLd-Cz-UB7" secondAttribute="top" constant="2" id="iKc-CY-gF5"/>
                                     <constraint firstItem="bGA-8Q-nfh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a8a-8O-bvl" secondAttribute="trailing" constant="8" symbolic="YES" id="lKg-b6-fJZ"/>
                                     <constraint firstItem="a8a-8O-bvl" firstAttribute="leading" secondItem="MLd-Cz-UB7" secondAttribute="leading" constant="8" id="mrV-bf-7eS"/>
+                                    <constraint firstAttribute="trailing" secondItem="suT-70-O53" secondAttribute="trailing" constant="8" id="ob4-ta-Cuj"/>
                                     <constraint firstItem="BHZ-22-2hH" firstAttribute="centerX" secondItem="MLd-Cz-UB7" secondAttribute="centerX" id="rid-ay-g7y"/>
+                                    <constraint firstItem="suT-70-O53" firstAttribute="leading" secondItem="MLd-Cz-UB7" secondAttribute="leading" constant="8" id="sbb-xJ-Vdq"/>
                                     <constraint firstAttribute="bottom" secondItem="a8a-8O-bvl" secondAttribute="bottom" constant="8" id="tTg-D3-8Jp"/>
                                     <constraint firstAttribute="bottom" secondItem="a8a-8O-bvl" secondAttribute="bottom" constant="8" id="tq0-Pd-66H"/>
                                 </constraints>
@@ -460,6 +466,7 @@
                         <outlet property="defaultsButton" destination="a0R-nj-Ifn" id="jtk-Qn-hsq"/>
                         <outlet property="editButton" destination="N16-eX-59C" id="2hi-Md-FPM"/>
                         <outlet property="editLabel" destination="BHZ-22-2hH" id="Sd7-bm-fDv"/>
+                        <outlet property="editTextField" destination="suT-70-O53" id="k4x-n5-cdI"/>
                         <outlet property="editView" destination="MLd-Cz-UB7" id="bB3-8M-dIm"/>
                         <outlet property="exitButton" destination="CQr-oL-mew" id="6fB-BI-p9h"/>
                         <outlet property="removeButton" destination="nRw-r3-1Jn" id="rs1-hg-Ch4"/>
