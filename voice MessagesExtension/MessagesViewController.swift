@@ -199,23 +199,28 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
-		
-		
+
 		
 		/* DEFAULTS */
-		manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
-		
-		manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
-		
-		manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
-		
-		manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
-		
-		manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
-		
-		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
-		/* DEFAULTS */
-		
+		if manager.defaults.integer(forKey: "runNum") == 0 {
+			manager.defaults.setValue(0, forKey: "runNum")
+			
+			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
+			
+			manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
+			
+			manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
+			
+			manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
+			
+			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
+			
+			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+			/* DEFAULTS */
+		}
+		else {
+			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		}
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -266,6 +271,13 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         // Use this method to release shared resources, save user data, invalidate timers,
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
+		
+		let tempNum = manager.defaults.integer(forKey: "runNum")
+
+		if tempNum < 2 {
+			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
+			print(manager.defaults.integer(forKey: "runNum"))
+		}
     }
    
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
@@ -319,35 +331,3 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
 
 }
-
-/*
-class AppDelegate: UIResponder, UIApplicationDelegate {
-	
-	let manager = UDM.manager
-	
-	
-	
-	func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-		
-		//manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forUndefinedKey: "algorithms")
-		
-		print("HELLO")
-		print("HELLO")
-		print("HELLO")
-		print("HELLO")
-		print("HELLO")
-		
-		manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
-		
-		manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
-		
-		manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
-		
-		manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
-		
-		manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
-		
-		return true
-	}
-}
-*/
