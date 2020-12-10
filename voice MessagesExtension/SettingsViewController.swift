@@ -13,9 +13,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	let manager = UDM.manager
 	
-	let defaultAlgorithms = ["default", "placeholder"]
+	let defaultAlgorithms = ["*^!", "RED", "no words", "halloween"]
 	
-	var masterAlgorithms = ["*^!", "original", "OIJFOISJGOSIGJSEOGIJSG", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween","*^!", "original", "no words", "halloween"]
+	var masterAlgorithms = [String]()
 	var selectedAlgorithm = 0
 
 	@IBOutlet weak var exitButton: UIImageView!
@@ -40,22 +40,26 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		requestPresentationStyle(.expanded)
 		
+		editTextField.text = ""
 		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
 		
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
 		let alg = manager.defaults.stringArray(forKey: algString)!
+		
+		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
 		for n in 0...alg.count - 2{
-			editTextField.text! += alg[n] + ", "
+			editTextField.text! += alg[n] + " "
 		}
 		editTextField.text! += alg[alg.count-1]
-
 		
 		editView.isHidden = false
+		
 		
 	}
 	
 	@IBAction func editingFinished(_ sender: Any) {
+		//done BUTTON
 		requestPresentationStyle(.compact)
 		editView.isHidden = true
 	}
@@ -97,7 +101,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		print("SELECTED ROW")
 		selectedAlgorithm = row
+		print(selectedAlgorithm)
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -131,6 +137,11 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
+		
+		
+		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+			
 		
 		editView.isHidden = true
 		

@@ -200,6 +200,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
 		
+		
+		
+		/* DEFAULTS */
 		manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
 		
 		manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
@@ -211,6 +214,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
 		
 		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		/* DEFAULTS */
 		
     }
 
