@@ -17,6 +17,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	var masterAlgorithms = [String]()
 	var selectedAlgorithm = 0
+	
+	//stores the editTextView information for when user wants to discard changes
+	var editingMemory = [String]()
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var algPickerView: UIPickerView!
@@ -37,7 +40,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
-		
 		requestPresentationStyle(.expanded)
 		
 		editTextField.text = ""
@@ -46,6 +48,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
 		let alg = manager.defaults.stringArray(forKey: algString)!
+		editingMemory = manager.defaults.stringArray(forKey: algString)!
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
 		for n in 0...alg.count - 2{
@@ -54,13 +57,24 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editTextField.text! += alg[alg.count-1]
 		
 		editView.isHidden = false
+	}
+	
+	@IBAction func saveChangesPressed(_ sender: Any) {
+		let selectedAlgorithmString = String(selectedAlgorithm)
+		let algString = "alg" + selectedAlgorithmString + "Symbols"
+		let tempArr = editTextField.text?.components(separatedBy: " ")
 		
+		manager.defaults.setValue(tempArr, forKey: algString)
+	}
+	
+	@IBAction func discardChangesPressed(_ sender: Any) {
 		
 	}
 	
 	@IBAction func editingFinished(_ sender: Any) {
 		//done BUTTON
 		requestPresentationStyle(.compact)
+		editingMemory.removeAll()
 		editView.isHidden = true
 	}
 	
