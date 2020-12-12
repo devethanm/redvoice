@@ -78,8 +78,12 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func editFrequencyChanged(_ sender: Any) {
-		let selectedAlgorithmString = String(selectedAlgorithm)
-		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		if editChangeFrequency.value >= 5.0 {
+			editChangeFrequency.value = 5.0
+		}
+		if editChangeFrequency.value <= 1.0 {
+			editChangeFrequency.value = 1.0
+		}
 		editFrequency.text = String(Int(editChangeFrequency.value))
 	}
 	
@@ -97,6 +101,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editTextField.text = ""
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
+		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		let alg = manager.defaults.stringArray(forKey: algString)!
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
@@ -104,6 +109,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			editTextField.text! += alg[n] + " "
 		}
 		editTextField.text! += alg[alg.count-1]
+		
+		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
+		editFrequency.text = String(Int(manager.defaults.double(forKey: algFreqString)))
 	}
 	
 	@IBAction func editingFinished(_ sender: Any) {
