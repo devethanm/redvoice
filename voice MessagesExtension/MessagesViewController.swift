@@ -215,10 +215,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
 			
-			manager.defaults.setValue(3.0, forKey: "alg0Freq")
-			manager.defaults.setValue(3.0, forKey: "alg1Freq")
-			manager.defaults.setValue(3.0, forKey: "alg2Freq")
-			manager.defaults.setValue(3.0, forKey: "alg3Freq")
+			manager.defaults.setValue(2.0, forKey: "alg0Freq")
+			manager.defaults.setValue(2.0, forKey: "alg1Freq")
+			manager.defaults.setValue(2.0, forKey: "alg2Freq")
+			manager.defaults.setValue(2.0, forKey: "alg3Freq")
 			
 			//CC stands for case changing
 			manager.defaults.setValue(true, forKey: "alg0CC")
