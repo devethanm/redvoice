@@ -414,6 +414,9 @@
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZ7-W5-LF0">
                                         <rect key="frame" x="43" y="89" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="caseChangingSliderChanged:" destination="5uI-cZ-xXG" eventType="valueChanged" id="2Kc-bo-pgh"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case changing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-wS-5Bx">
                                         <rect key="frame" x="12" y="71" width="110" height="18"/>
@@ -425,6 +428,9 @@
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-NS-j3q">
                                         <rect key="frame" x="229" y="89" width="94" height="32"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="editFrequencyChanged:" destination="5uI-cZ-xXG" eventType="valueChanged" id="zhU-fH-Nmt"/>
+                                        </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOD-Mk-IDG">
                                         <rect key="frame" x="229" y="71" width="77" height="18"/>
@@ -511,6 +517,9 @@
                         <outlet property="createButton" destination="FVn-La-bNs" id="1zx-RF-E6t"/>
                         <outlet property="defaultsButton" destination="a0R-nj-Ifn" id="jtk-Qn-hsq"/>
                         <outlet property="editButton" destination="N16-eX-59C" id="2hi-Md-FPM"/>
+                        <outlet property="editCaseChanging" destination="YZ7-W5-LF0" id="RUe-SK-FFj"/>
+                        <outlet property="editChangeFrequency" destination="rPK-NS-j3q" id="OUV-DH-kpU"/>
+                        <outlet property="editFrequency" destination="XIF-Fe-Z2b" id="WzF-3V-v6L"/>
                         <outlet property="editLabel" destination="BHZ-22-2hH" id="Sd7-bm-fDv"/>
                         <outlet property="editTextField" destination="suT-70-O53" id="k4x-n5-cdI"/>
                         <outlet property="editView" destination="MLd-Cz-UB7" id="bB3-8M-dIm"/>

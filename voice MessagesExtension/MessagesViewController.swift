@@ -215,6 +215,17 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
 			
+			manager.defaults.setValue(3.0, forKey: "alg0Freq")
+			manager.defaults.setValue(3.0, forKey: "alg1Freq")
+			manager.defaults.setValue(3.0, forKey: "alg2Freq")
+			manager.defaults.setValue(3.0, forKey: "alg3Freq")
+			
+			//CC stands for case changing
+			manager.defaults.setValue(true, forKey: "alg0CC")
+			manager.defaults.setValue(true, forKey: "alg1CC")
+			manager.defaults.setValue(false, forKey: "alg2CC")
+			manager.defaults.setValue(false, forKey: "alg3CC")
+			
 			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */
 		}
@@ -276,7 +287,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 
 		if tempNum < 2 {
 			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
-			print(manager.defaults.integer(forKey: "runNum"))
 		}
     }
    

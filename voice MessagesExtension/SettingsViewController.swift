@@ -29,6 +29,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var editView: UIView!
 	@IBOutlet weak var editLabel: UILabel!
 	@IBOutlet weak var editTextField: UITextField!
+	@IBOutlet weak var editFrequency: UILabel!
+	@IBOutlet weak var editCaseChanging: UISwitch!
+	@IBOutlet weak var editChangeFrequency: UIStepper!
 	
 	
 	
@@ -45,7 +48,13 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
+		let algCCString = "alg" + selectedAlgorithmString + "CC"
+		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		let alg = manager.defaults.stringArray(forKey: algString)!
+		
+		editFrequency.text = String(manager.defaults.double(forKey: algFreqString))
+		editCaseChanging.isOn = manager.defaults.bool(forKey: algCCString)
+		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
 		for n in 0...alg.count - 2{
@@ -56,11 +65,31 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editView.isHidden = false
 	}
 	
+	@IBAction func caseChangingSliderChanged(_ sender: Any) {
+		let selectedAlgorithmString = String(selectedAlgorithm)
+		let algString = "alg" + selectedAlgorithmString + "CC"
+		
+		if editCaseChanging.isOn {
+			manager.defaults.setValue(true, forKey: algString)
+		}
+		else {
+			manager.defaults.setValue(false, forKey: algString)
+		}
+	}
+	
+	@IBAction func editFrequencyChanged(_ sender: Any) {
+		let selectedAlgorithmString = String(selectedAlgorithm)
+		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		editFrequency.text = String(Int(editChangeFrequency.value))
+	}
+	
 	@IBAction func saveChangesPressed(_ sender: Any) {
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
+		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		let tempArr = editTextField.text?.components(separatedBy: " ")
 		
+		manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
 		manager.defaults.setValue(tempArr, forKey: algString)
 	}
 	
@@ -120,9 +149,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		print("SELECTED ROW")
 		selectedAlgorithm = row
-		print(selectedAlgorithm)
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

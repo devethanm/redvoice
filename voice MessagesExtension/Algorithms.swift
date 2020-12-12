@@ -12,18 +12,94 @@ public class Generator {
 	
 	var symbols: [String]
 	var returnText: String
-	
+	var caseChanging: Bool
+	var frequency: Int
 	let manager = UDM.manager
-	
-	init(userSymbols: [String]) {
-		self.symbols = userSymbols
-		self.returnText = ""
-	}
 	
 	init() {
 		symbols = ["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "ok!", "slatt", "!"]
 		returnText = ""
+		caseChanging = false
+		frequency = 1
 	}
+	
+	func generate(algNum: Int, text: String) -> String {
+		returnText = ""
+		let textArray = text.split(separator: " ")
+		let selectedAlgorithmString = String(algNum)
+		let algSymbolsString = "alg" + selectedAlgorithmString + "Symbols"
+		let algCCString = "alg" + selectedAlgorithmString + "CC"
+		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		
+		symbols = manager.defaults.stringArray(forKey: algSymbolsString)!
+		caseChanging = manager.defaults.bool(forKey: algCCString)
+		frequency = manager.defaults.integer(forKey: algFreqString)
+		
+		if Int.random(in: 1...frequency) != 1 {
+			returnText += symbols.randomElement() ?? " "
+			returnText += " "
+		}
+		
+		if caseChanging {
+			for word in textArray {
+				if Int.random(in: 1...frequency) != 1 {
+					returnText += (caseChange(word: String(word)) + " " + symbols.randomElement()! + " ")
+				}
+				else {
+					returnText += (caseChange(word: String(word)) + " ")
+				}
+			}
+		}
+		else  {
+			for word in textArray {
+				if Int.random(in: 1...frequency) != 1 {
+					returnText += (word + " " + symbols.randomElement()! + " ")
+				}
+				else {
+					returnText += (word + " ")
+				}
+			}
+		}
+		
+		return returnText
+	}
+	
+	func caseChange(word: String) -> String {
+		var caseChangedWord = ""
+		
+		for letter in word {
+			let randNum = Int.random(in: 1...2)
+			if randNum == 1 {
+				caseChangedWord += letter.uppercased()
+			}
+			else {
+				caseChangedWord += letter.lowercased()
+			}
+		}
+		
+		return caseChangedWord
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	/*
 	func returnSymbols(algNum: Int) -> [String] {
@@ -45,7 +121,7 @@ public class Generator {
 		}
 	}
 	*/
-	
+	/*
 	func generate(algNum: Int, text:String) -> String {
 		
 		let textarray = text.split(separator: " ")
@@ -106,3 +182,4 @@ public class Generator {
 	}
 
 }
+*/
