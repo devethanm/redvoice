@@ -52,7 +52,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		let alg = manager.defaults.stringArray(forKey: algString)!
 		
-		editFrequency.text = String(manager.defaults.double(forKey: algFreqString))
+		editFrequency.text = String(Int(manager.defaults.double(forKey: algFreqString)))
 		editCaseChanging.isOn = manager.defaults.bool(forKey: algCCString)
 		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
 		
@@ -66,15 +66,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func caseChangingSliderChanged(_ sender: Any) {
-		let selectedAlgorithmString = String(selectedAlgorithm)
-		let algString = "alg" + selectedAlgorithmString + "CC"
 		
-		if editCaseChanging.isOn {
-			manager.defaults.setValue(true, forKey: algString)
-		}
-		else {
-			manager.defaults.setValue(false, forKey: algString)
-		}
 	}
 	
 	@IBAction func editFrequencyChanged(_ sender: Any) {
@@ -91,10 +83,17 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
 		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		let algCCString = "alg" + selectedAlgorithmString + "CC"
 		let tempArr = editTextField.text?.components(separatedBy: " ")
 		
 		manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
 		manager.defaults.setValue(tempArr, forKey: algString)
+		if editCaseChanging.isOn {
+			manager.defaults.setValue(true, forKey: algCCString)
+		}
+		else {
+			manager.defaults.setValue(false, forKey: algCCString)
+		}
 	}
 	
 	@IBAction func discardChangesPressed(_ sender: Any) {
@@ -102,6 +101,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let selectedAlgorithmString = String(selectedAlgorithm)
 		let algString = "alg" + selectedAlgorithmString + "Symbols"
 		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		let algCCString = "alg" + selectedAlgorithmString + "CC"
 		let alg = manager.defaults.stringArray(forKey: algString)!
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
@@ -111,7 +111,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editTextField.text! += alg[alg.count-1]
 		
 		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
-		editFrequency.text = String(Int(manager.defaults.double(forKey: algFreqString)))
+		editFrequency.text = String(Int(editChangeFrequency.value))
+		editCaseChanging.isOn = manager.defaults.bool(forKey: algCCString)
 	}
 	
 	@IBAction func editingFinished(_ sender: Any) {

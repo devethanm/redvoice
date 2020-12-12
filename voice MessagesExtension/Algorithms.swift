@@ -42,8 +42,15 @@ public class Generator {
 		
 		if caseChanging {
 			for word in textArray {
+				if frequency == 1{ frequency = 2 }
+				
 				if Int.random(in: 1...frequency) != 1 {
-					returnText += (caseChange(word: String(word)) + " " + symbols.randomElement()! + " ")
+					if Int.random(in: 1...frequency) != 1 {
+						returnText += (caseChange(word: String(word)) + " " + symbols.randomElement()! + " ")
+					}
+					else {
+						returnText += (caseChange(word: String(word)) + " ")
+					}
 				}
 				else {
 					returnText += (caseChange(word: String(word)) + " ")
@@ -52,8 +59,14 @@ public class Generator {
 		}
 		else  {
 			for word in textArray {
+				if frequency == 1{ frequency = 2 }
 				if Int.random(in: 1...frequency) != 1 {
-					returnText += (word + " " + symbols.randomElement()! + " ")
+					if Int.random(in: 1...frequency) != 1 {
+						returnText += (word + " " + symbols.randomElement()! + " ")
+					}
+					else {
+						returnText += (word + " ")
+					}
 				}
 				else {
 					returnText += (word + " ")
