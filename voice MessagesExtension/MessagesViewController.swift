@@ -207,6 +207,20 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
 			
+			manager.defaults.setValue([
+				
+			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
+			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
+			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["👻","🎃","🕸","😨","🧡","🍁"]
+				
+			], forKey: "algSymbols")
+			
+			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			
+			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
+			
+			/*
 			manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
 			
 			manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
@@ -214,17 +228,22 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
 			
 			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
+			*/
 			
+			/*
 			manager.defaults.setValue(2.0, forKey: "alg0Freq")
 			manager.defaults.setValue(2.0, forKey: "alg1Freq")
 			manager.defaults.setValue(2.0, forKey: "alg2Freq")
 			manager.defaults.setValue(2.0, forKey: "alg3Freq")
+			*/
 			
 			//CC stands for case changing
+			/*
 			manager.defaults.setValue(true, forKey: "alg0CC")
 			manager.defaults.setValue(true, forKey: "alg1CC")
 			manager.defaults.setValue(false, forKey: "alg2CC")
 			manager.defaults.setValue(false, forKey: "alg3CC")
+			*/
 			
 			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */

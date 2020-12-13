@@ -46,21 +46,25 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editTextField.text = ""
 		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
 		
-		let selectedAlgorithmString = String(selectedAlgorithm)
-		let algString = "alg" + selectedAlgorithmString + "Symbols"
-		let algCCString = "alg" + selectedAlgorithmString + "CC"
-		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
-		let alg = manager.defaults.stringArray(forKey: algString)!
 		
-		editFrequency.text = String(Int(manager.defaults.double(forKey: algFreqString)))
-		editCaseChanging.isOn = manager.defaults.bool(forKey: algCCString)
-		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
+		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+		let symbols = allSymbols[selectedAlgorithm] as! [String]
+		
+		let allCC = manager.defaults.array(forKey: "algCCs")
+		let caseChanging = allCC![selectedAlgorithm] as! Bool
+		
+		let allFreq = manager.defaults.array(forKey: "algFreqs")
+		let frequency = allFreq![selectedAlgorithm] as! Double
+		
+		editFrequency.text = String(Int(frequency))
+		editCaseChanging.isOn = caseChanging
+		editChangeFrequency.value = frequency
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-		for n in 0...alg.count - 2{
-			editTextField.text! += alg[n] + " "
+		for n in 0...symbols.count - 2{
+			editTextField.text! += symbols[n] + " "
 		}
-		editTextField.text! += alg[alg.count-1]
+		editTextField.text! += symbols[symbols.count-1]
 		
 		editView.isHidden = false
 	}
@@ -80,39 +84,50 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func saveChangesPressed(_ sender: Any) {
-		let selectedAlgorithmString = String(selectedAlgorithm)
-		let algString = "alg" + selectedAlgorithmString + "Symbols"
-		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
-		let algCCString = "alg" + selectedAlgorithmString + "CC"
+		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+		let allCC = manager.defaults.array(forKey: "algCCs")
+		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		let tempArr = editTextField.text?.components(separatedBy: " ")
 		
-		manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
-		manager.defaults.setValue(tempArr, forKey: algString)
+		var tempFreq = allFreq
+		tempFreq![selectedAlgorithm] = editChangeFrequency.value
+		manager.defaults.setValue(tempFreq, forKey: "algFreqs")
+		//manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
+		
+		var tempSymbols = allSymbols
+		tempSymbols[selectedAlgorithm] = tempArr!
+		//manager.defaults.setValue(tempArr, forKey: algString)
+		
+		var tempCC = allCC
 		if editCaseChanging.isOn {
-			manager.defaults.setValue(true, forKey: algCCString)
+			tempCC![selectedAlgorithm] = true
+			manager.defaults.setValue(tempCC, forKey: "algCCs")
 		}
 		else {
-			manager.defaults.setValue(false, forKey: algCCString)
+			tempCC![selectedAlgorithm] = false
+			manager.defaults.setValue(tempCC, forKey: "algCCs")
 		}
 	}
 	
 	@IBAction func discardChangesPressed(_ sender: Any) {
-		editTextField.text = ""
-		let selectedAlgorithmString = String(selectedAlgorithm)
-		let algString = "alg" + selectedAlgorithmString + "Symbols"
-		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
-		let algCCString = "alg" + selectedAlgorithmString + "CC"
-		let alg = manager.defaults.stringArray(forKey: algString)!
+		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+		let symbols = allSymbols[selectedAlgorithm] as! [String]
+		
+		let allCC = manager.defaults.array(forKey: "algCCs")
+		let caseChanging = allCC![selectedAlgorithm] as! Bool
+		
+		let allFreq = manager.defaults.array(forKey: "algFreqs")
+		let frequency = allFreq![selectedAlgorithm] as! Double
 		
 		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-		for n in 0...alg.count - 2{
-			editTextField.text! += alg[n] + " "
+		for n in 0...symbols.count - 2{
+			editTextField.text! += symbols[n] + " "
 		}
-		editTextField.text! += alg[alg.count-1]
+		editTextField.text! += symbols[symbols.count-1]
 		
-		editChangeFrequency.value = manager.defaults.double(forKey: algFreqString)
-		editFrequency.text = String(Int(editChangeFrequency.value))
-		editCaseChanging.isOn = manager.defaults.bool(forKey: algCCString)
+		editChangeFrequency.value = frequency
+		editFrequency.text = String(Int(frequency))
+		editCaseChanging.isOn = caseChanging
 	}
 	
 	@IBAction func editingFinished(_ sender: Any) {

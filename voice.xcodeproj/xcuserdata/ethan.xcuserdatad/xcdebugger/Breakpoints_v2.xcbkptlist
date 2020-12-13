@@ -15,10 +15,10 @@
             timestampString = "619208845.425404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "MessagesViewController"
-            landmarkType = "3">
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(hex:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "6F012931-2E6C-4ABA-A4EE-859808A3AC68 - a5c350c171f3f799"
@@ -114,10 +114,10 @@
             timestampString = "619208845.425766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
-            landmarkType = "7">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "MessagesViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -131,10 +131,60 @@
             timestampString = "619208845.426055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "MessagesViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "95A31440-31F4-420F-A092-49771B8A7CA9 - cbde764ae87bf3a5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "voice_MessagesExtension.MessagesViewController.algorithms.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "voice MessagesExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Coding/Xcode/Apps/voice/voice/voice%20MessagesExtension/MessagesViewController.swift"
+                  timestampString = "617241462.015898"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "95A31440-31F4-420F-A092-49771B8A7CA9 - 79cf22c7058d2ff1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "voice_MessagesExtension.MessagesViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; voice_MessagesExtension.MessagesViewController"
+                  moduleName = "voice MessagesExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Coding/Xcode/Apps/voice/voice/voice%20MessagesExtension/MessagesViewController.swift"
+                  timestampString = "617241462.018245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "516">
+               </Location>
+               <Location
+                  uuid = "95A31440-31F4-420F-A092-49771B8A7CA9 - ae5ecbe9a5d3f4d3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "voice_MessagesExtension.MessagesViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;voice_MessagesExtension.MessagesViewController&gt;"
+                  moduleName = "voice MessagesExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Coding/Xcode/Apps/voice/voice/voice%20MessagesExtension/MessagesViewController.swift"
+                  timestampString = "617241462.0205849"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,10 +198,10 @@
             timestampString = "619208845.426351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "MessagesViewController"
-            landmarkType = "3">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(hex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -165,42 +215,10 @@
             timestampString = "619208845.426587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "pickerView(_:viewForRow:forComponent:reusing:)"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "sendButtonPressed(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9C7E71BB-1C6F-423B-9614-63BF216D7AD3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voice MessagesExtension/MessagesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "MessagesViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8BC0BD7F-D0D9-40DC-8FA6-B73B46AAE623"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voice MessagesExtension/SettingsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "SettingsViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

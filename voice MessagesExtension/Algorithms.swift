@@ -26,14 +26,19 @@ public class Generator {
 	func generate(algNum: Int, text: String) -> String {
 		returnText = ""
 		let textArray = text.split(separator: " ")
-		let selectedAlgorithmString = String(algNum)
-		let algSymbolsString = "alg" + selectedAlgorithmString + "Symbols"
-		let algCCString = "alg" + selectedAlgorithmString + "CC"
-		let algFreqString = "alg" + selectedAlgorithmString + "Freq"
+		//let algSymbolsString = "alg" + selectedAlgorithmString + "Symbols"
+		//let algCCString = "alg" + selectedAlgorithmString + "CC"
+		//let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		
-		symbols = manager.defaults.stringArray(forKey: algSymbolsString)!
-		caseChanging = manager.defaults.bool(forKey: algCCString)
-		frequency = manager.defaults.integer(forKey: algFreqString)
+		
+		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+		symbols = allSymbols[algNum] as! [String]
+		
+		let allCC = manager.defaults.array(forKey: "algCCs")
+		caseChanging = allCC![algNum] as! Bool
+		
+		let allFreq = manager.defaults.array(forKey: "algFreqs")
+		frequency = allFreq![algNum] as! Int
 		
 		if Int.random(in: 1...frequency) != 1 {
 			returnText += symbols.randomElement() ?? " "
