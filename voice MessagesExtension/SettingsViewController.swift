@@ -13,11 +13,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	let manager = UDM.manager
 	
-	let defaultAlgorithms = ["*^!", "RED", "no words", "halloween"]
-	
 	var masterAlgorithms = [String]()
 	var selectedAlgorithm = 0
-	
+	var alert = 0
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var algPickerView: UIPickerView!
@@ -33,11 +31,26 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var editCaseChanging: UISwitch!
 	@IBOutlet weak var editChangeFrequency: UIStepper!
 	
+	@IBOutlet weak var alertView: UIView!
+	@IBOutlet weak var alertLabel: UILabel!
+	@IBOutlet weak var alertYes: UIButton!
+	@IBOutlet weak var alertNo: UIButton!
 	
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
+		//MessagesViewController().pickerView.reloadAllComponents()
+		/*
+		let temp = MessagesViewController()
+		let pick = temp.pickerView
+		pick?.reloadAllComponents()
+		MessagesViewController().pickerView = pick
+		*/
+		
 		dismiss(animated:true, completion: nil)
+		let vc = storyboard?.instantiateViewController(withIdentifier: "main")
+		vc?.modalPresentationStyle = .fullScreen
+		present(vc!,animated: true)
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
@@ -138,7 +151,72 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
+		alert = 0
+		alertLabel.text = ""
+		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
+		alertView.isHidden = false
+	}
+	
+	@IBAction func yesPressed(_ sender: Any) {
 		
+		if alert == 0 {
+			let algorithms = manager.defaults.stringArray(forKey: "algorithms")
+			
+			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+			let allCC = manager.defaults.array(forKey: "algCCs")
+			let allFreq = manager.defaults.array(forKey: "algFreqs")
+			
+			var tempAlgs = algorithms
+			tempAlgs!.remove(at: selectedAlgorithm)
+			manager.defaults.setValue(tempAlgs, forKey: "algorithms")
+			
+			var tempSymbols = allSymbols
+			tempSymbols.remove(at: selectedAlgorithm)
+			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
+			
+			var tempCC = allCC
+			tempCC!.remove(at: selectedAlgorithm)
+			manager.defaults.setValue(tempCC, forKey: "algCCs")
+			
+			var tempFreq = allFreq
+			tempFreq!.remove(at: selectedAlgorithm)
+			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
+			
+			masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
+			
+			print(manager.defaults.stringArray(forKey: "algorithms")!)
+			print("ABOVE IS SETTINGS VIEW CON")
+			algPickerView.reloadAllComponents()
+			
+		}
+		else if alert == 1 {
+			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
+			
+			manager.defaults.setValue([
+				
+			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
+			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
+			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["👻","🎃","🕸","😨","🧡","🍁"]
+				
+			], forKey: "algSymbols")
+			
+			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			
+			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
+		}
+		alertView.isHidden = true
+	}
+	
+	@IBAction func noPressed(_ sender: Any) {
+		alertView.isHidden = true
+	}
+	
+	
+	@IBAction func defaultsPressed(_ sender: Any) {
+		alert = 1
+		alertLabel.text = "RESTORE DEFAULTS?"
+		alertView.isHidden = false
 	}
 	
 
@@ -186,6 +264,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
 		label.frame = CGRect(x: 0,y: 0,width: 100,height: 20)
+		print("RELOAD ON SETTINGS")
+		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		label.text = masterAlgorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center

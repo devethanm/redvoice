@@ -30,7 +30,6 @@ public class Generator {
 		//let algCCString = "alg" + selectedAlgorithmString + "CC"
 		//let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		
-		
 		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
 		symbols = allSymbols[algNum] as! [String]
 		
@@ -78,7 +77,6 @@ public class Generator {
 				}
 			}
 		}
-		
 		return returnText
 	}
 	

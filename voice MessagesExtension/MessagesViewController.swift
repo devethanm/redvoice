@@ -63,6 +63,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
 	var selectedAlgorithm = 0
+	
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
@@ -101,7 +102,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	// var declaration because users will be able to
     // add their own algorithms
 	var algorithms = [String]()
-    
+	
+	
+	func reloadPickerView() {
+		pickerView.reloadAllComponents()
+	}
+	
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1 //keep this as 1
     }
@@ -111,6 +117,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		print("COUNT")
         return algorithms.count
     }
     
@@ -130,6 +137,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
         label.frame = CGRect(x: 0,y: 30,width: 100,height: 100)
+		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		print(algorithms)
+		print("HELLO")
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
@@ -164,6 +174,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		/*TODO:
 			On load append all algorithms from settings to the algorithms array
 		*/
+		
+		reloadPickerView()
+		
+		print("VIEW DID LOAD")
 		
 		pickerView.delegate = self
 		pickerView.dataSource = self
@@ -248,8 +262,21 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */
 		}
-		else {
-			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+		pickerView.reloadAllComponents()
+		
+		print(algorithms)
+		reloadPickerView()
+		print("ABOVE IS MAIN VIEW CON")
+		pickerView.reloadAllComponents()
+		print("END OF VIEW DID LOAD")
+		
+		let tempNum = manager.defaults.integer(forKey: "runNum")
+
+		if tempNum < 2 {
+			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
 		}
     }
 
