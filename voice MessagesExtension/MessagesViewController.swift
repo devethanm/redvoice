@@ -253,12 +253,16 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		}
     }
 
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        //requestPresentationStyle(.expanded)
+	func textViewDidBeginEditing(_ textView: UITextView) {
 		writeTextHereLabel.isHidden = true
 		requestPresentationStyle(.expanded)
-    }
-    
+	}
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+		
+	}
+	
+	
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if text == "\n" {
 			writeTextView.resignFirstResponder()
