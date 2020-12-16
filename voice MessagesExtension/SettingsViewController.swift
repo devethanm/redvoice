@@ -182,12 +182,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			tempFreq!.remove(at: selectedAlgorithm)
 			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
 			
-			masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
-			
-			print(manager.defaults.stringArray(forKey: "algorithms")!)
-			print("ABOVE IS SETTINGS VIEW CON")
-			algPickerView.reloadAllComponents()
-			
 		}
 		else if alert == 1 {
 			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
@@ -204,7 +198,11 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
+			
 		}
+		
+		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		algPickerView.reloadAllComponents()
 		alertView.isHidden = true
 	}
 	
@@ -264,8 +262,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
 		label.frame = CGRect(x: 0,y: 0,width: 100,height: 20)
-		print("RELOAD ON SETTINGS")
-		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		label.text = masterAlgorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center

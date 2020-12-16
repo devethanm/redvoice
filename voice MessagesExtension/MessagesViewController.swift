@@ -117,7 +117,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		print("COUNT")
         return algorithms.count
     }
     
@@ -137,9 +136,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//let label = UILabel( frame: CGRect( x: 0, y: 0, width: view.bounds.width, height: view.bounds.height ) )
 		
         label.frame = CGRect(x: 0,y: 30,width: 100,height: 100)
-		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
-		print(algorithms)
-		print("HELLO")
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
@@ -175,15 +171,13 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			On load append all algorithms from settings to the algorithms array
 		*/
 		
-		reloadPickerView()
-		
 		print("VIEW DID LOAD")
 		
 		pickerView.delegate = self
 		pickerView.dataSource = self
 		writeTextView.delegate = self
 		
-		// setup settingsButton gesture recognizer
+		// setup gesture recognizers
 		let settingsTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		
 		let infoTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -193,10 +187,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		settingsButton.isUserInteractionEnabled = true
 		settingsButton.addGestureRecognizer(settingsTapGestureRecognizer)
 	
-		// add done button to dismiss keyboard
-		//self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-		
-		//writeTextView.alwaysBounceVertical = true
         /*
          STYLING
 		*/
@@ -234,31 +224,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
-			/*
-			manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
-			
-			manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
-			
-			manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
-			
-			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
-			*/
-			
-			/*
-			manager.defaults.setValue(2.0, forKey: "alg0Freq")
-			manager.defaults.setValue(2.0, forKey: "alg1Freq")
-			manager.defaults.setValue(2.0, forKey: "alg2Freq")
-			manager.defaults.setValue(2.0, forKey: "alg3Freq")
-			*/
-			
-			//CC stands for case changing
-			/*
-			manager.defaults.setValue(true, forKey: "alg0CC")
-			manager.defaults.setValue(true, forKey: "alg1CC")
-			manager.defaults.setValue(false, forKey: "alg2CC")
-			manager.defaults.setValue(false, forKey: "alg3CC")
-			*/
-			
 			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */
 		}
@@ -266,18 +231,14 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		
 		pickerView.reloadAllComponents()
-		
-		print(algorithms)
-		reloadPickerView()
-		print("ABOVE IS MAIN VIEW CON")
-		pickerView.reloadAllComponents()
-		print("END OF VIEW DID LOAD")
+		pickerView.selectRow(0, inComponent: 0, animated: true)
 		
 		let tempNum = manager.defaults.integer(forKey: "runNum")
 
 		if tempNum < 2 {
 			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
 		}
+		
     }
 
 	func textViewDidBeginEditing(_ textView: UITextView) {
@@ -332,12 +293,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         // Use this method to release shared resources, save user data, invalidate timers,
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
-		
-		let tempNum = manager.defaults.integer(forKey: "runNum")
 
-		if tempNum < 2 {
-			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
-		}
     }
    
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
