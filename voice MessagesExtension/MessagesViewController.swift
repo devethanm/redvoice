@@ -86,9 +86,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// handles press on the settings button / picture
 	@IBAction func settingsButtonPressed() {
-		let vc = storyboard?.instantiateViewController(withIdentifier: "settings")
-		vc?.modalPresentationStyle = .fullScreen
-		present(vc!,animated: true)
+		let vc = storyboard?.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.mainVC = self
+		present(vc,animated: true)
 	}
 	
 	// handles press on the info button / picture
@@ -230,7 +231,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		
-		pickerView.reloadAllComponents()
 		pickerView.selectRow(0, inComponent: 0, animated: true)
 		
 		let tempNum = manager.defaults.integer(forKey: "runNum")

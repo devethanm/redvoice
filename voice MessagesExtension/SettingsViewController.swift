@@ -11,6 +11,9 @@ import Messages
 
 class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 	
+	
+	var mainVC: MessagesViewController!
+	
 	let manager = UDM.manager
 	
 	var masterAlgorithms = [String]()
@@ -42,6 +45,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
 		
+		mainVC.algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		mainVC.pickerView.reloadAllComponents()
 		dismiss(animated:true, completion: nil)
 		
 	}
