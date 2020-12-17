@@ -207,23 +207,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0E95965C-BE55-4034-A653-65495CBDDC8E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voice MessagesExtension/MessagesViewController.swift"
-            timestampString = "619208845.426587"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "settingsButtonPressed()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A4472F8E-7EB0-45AF-B56F-0971E4FBA5F6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -233,8 +216,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "MessagesViewController"
-            landmarkType = "3">
+            landmarkName = "pickerView(_:viewForRow:forComponent:reusing:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

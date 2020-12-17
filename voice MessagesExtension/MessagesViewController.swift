@@ -275,7 +275,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 	}
 	
-	
+	override func viewWillAppear(_ animated: Bool) {
+		print("WILL APPEAR")
+	}
     
     // MARK: - Conversation Handling
     override func willBecomeActive(with conversation: MSConversation) {

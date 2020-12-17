@@ -16,6 +16,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	var masterAlgorithms = [String]()
 	var selectedAlgorithm = 0
 	var alert = 0
+	
+	// var mainVC: MessagesViewController!
 
 	@IBOutlet weak var exitButton: UIImageView!
 	@IBOutlet weak var algPickerView: UIPickerView!
@@ -39,7 +41,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
+		
 		dismiss(animated:true, completion: nil)
+		
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
