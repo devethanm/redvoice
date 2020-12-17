@@ -39,18 +39,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
-		//MessagesViewController().pickerView.reloadAllComponents()
-		/*
-		let temp = MessagesViewController()
-		let pick = temp.pickerView
-		pick?.reloadAllComponents()
-		MessagesViewController().pickerView = pick
-		*/
-		
 		dismiss(animated:true, completion: nil)
-		let vc = storyboard?.instantiateViewController(withIdentifier: "main")
-		vc?.modalPresentationStyle = .fullScreen
-		present(vc!,animated: true)
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
