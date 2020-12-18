@@ -63,6 +63,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	// rotation angle for the horizontal picker view
     var rotationAngle: CGFloat!
 	var selectedAlgorithm = 0
+	
 
 	@IBAction func clearButtonPressed(_ sender: Any) {
 		writeTextView.text = ""
@@ -85,9 +86,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// handles press on the settings button / picture
 	@IBAction func settingsButtonPressed() {
-		let vc = storyboard?.instantiateViewController(withIdentifier: "settings")
-		vc?.modalPresentationStyle = .fullScreen
-		present(vc!,animated: true)
+		let vc = storyboard?.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.mainVC = self
+		present(vc,animated: true)
 	}
 	
 	// handles press on the info button / picture
@@ -101,7 +103,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	// var declaration because users will be able to
     // add their own algorithms
 	var algorithms = [String]()
-    
+	
+	
+	func reloadPickerView() {
+		pickerView.reloadAllComponents()
+	}
+	
     func numberOfComponents( in pickerView: UIPickerView ) -> Int {
             return 1 //keep this as 1
     }
@@ -169,7 +176,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		pickerView.dataSource = self
 		writeTextView.delegate = self
 		
-		// setup settingsButton gesture recognizer
+		// setup gesture recognizers
 		let settingsTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		
 		let infoTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -179,10 +186,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		settingsButton.isUserInteractionEnabled = true
 		settingsButton.addGestureRecognizer(settingsTapGestureRecognizer)
 	
-		// add done button to dismiss keyboard
-		//self.writeTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-		
-		//writeTextView.alwaysBounceVertical = true
         /*
          STYLING
 		*/
@@ -199,7 +202,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
-
+		/*
+		 STYLING
+		*/
 		
 		/* DEFAULTS */
 		if manager.defaults.integer(forKey: "runNum") == 0 {
@@ -207,39 +212,44 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
 			
-			manager.defaults.setValue(["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"], forKey: "alg0Symbols")
+			manager.defaults.setValue([
+				
+			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
+			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
+			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["👻","🎃","🕸","😨","🧡","🍁"]
+				
+			], forKey: "algSymbols")
 			
-			manager.defaults.setValue(["💔", "🖤", "🧛🏿‍♂️", "💋", "!"], forKey: "alg1Symbols")
+			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
 			
-			manager.defaults.setValue(["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"], forKey: "alg2Symbols")
+			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
-			manager.defaults.setValue(["👻","🎃","🕸","😨","🧡","🍁"], forKey: "alg3Symbols")
-			
-			manager.defaults.setValue(2.0, forKey: "alg0Freq")
-			manager.defaults.setValue(2.0, forKey: "alg1Freq")
-			manager.defaults.setValue(2.0, forKey: "alg2Freq")
-			manager.defaults.setValue(2.0, forKey: "alg3Freq")
-			
-			//CC stands for case changing
-			manager.defaults.setValue(true, forKey: "alg0CC")
-			manager.defaults.setValue(true, forKey: "alg1CC")
-			manager.defaults.setValue(false, forKey: "alg2CC")
-			manager.defaults.setValue(false, forKey: "alg3CC")
-			
-			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */
 		}
-		else {
-			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+		pickerView.selectRow(0, inComponent: 0, animated: false)
+		
+		let tempNum = manager.defaults.integer(forKey: "runNum")
+
+		if tempNum < 2 {
+			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
 		}
+		
     }
 
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        //requestPresentationStyle(.expanded)
+	func textViewDidBeginEditing(_ textView: UITextView) {
 		writeTextHereLabel.isHidden = true
 		requestPresentationStyle(.expanded)
-    }
-    
+	}
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+		
+	}
+	
+	
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if text == "\n" {
 			writeTextView.resignFirstResponder()
@@ -264,7 +274,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 	}
 	
-	
+	override func viewWillAppear(_ animated: Bool) {
+
+	}
     
     // MARK: - Conversation Handling
     override func willBecomeActive(with conversation: MSConversation) {
@@ -282,12 +294,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         // Use this method to release shared resources, save user data, invalidate timers,
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
-		
-		let tempNum = manager.defaults.integer(forKey: "runNum")
 
-		if tempNum < 2 {
-			manager.defaults.setValue(tempNum + 1, forKey: "runNum")
-		}
     }
    
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
