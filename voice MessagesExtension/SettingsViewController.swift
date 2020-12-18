@@ -9,7 +9,7 @@
 import UIKit
 import Messages
 
-class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 	
 	
 	var mainVC: MessagesViewController!
@@ -44,11 +44,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
-		
 		mainVC.algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		mainVC.pickerView.reloadAllComponents()
 		dismiss(animated:true, completion: nil)
-		
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
@@ -78,10 +76,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editTextField.text! += symbols[symbols.count-1]
 		
 		editView.isHidden = false
-	}
-	
-	@IBAction func caseChangingSliderChanged(_ sender: Any) {
-		
 	}
 	
 	@IBAction func editFrequencyChanged(_ sender: Any) {
@@ -150,13 +144,11 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
 		alert = 0
-		alertLabel.text = ""
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
 		alertView.isHidden = false
 	}
 	
 	@IBAction func yesPressed(_ sender: Any) {
-		
 		if alert == 0 {
 			let algorithms = manager.defaults.stringArray(forKey: "algorithms")
 			
@@ -269,6 +261,14 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		return view
 	}
 	
+	
+	//edit text field methods:
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		editTextField.resignFirstResponder()
+		requestPresentationStyle(.compact)
+		return true
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -277,18 +277,16 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		algPickerView.delegate = self
 		algPickerView.dataSource = self
 		
+		editTextField.delegate = self
+		
 		// setup settingsButton gesture recognizer
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
 		
-		
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		
-			
-		
 		editView.isHidden = true
-		
     }
     
 

@@ -172,8 +172,6 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			On load append all algorithms from settings to the algorithms array
 		*/
 		
-		print("VIEW DID LOAD")
-		
 		pickerView.delegate = self
 		pickerView.dataSource = self
 		writeTextView.delegate = self
@@ -204,7 +202,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		previewTextView.layer.borderColor = UIColor.blue.cgColor
 		previewTextView.layer.borderWidth = 2.0
-
+		/*
+		 STYLING
+		*/
 		
 		/* DEFAULTS */
 		if manager.defaults.integer(forKey: "runNum") == 0 {
@@ -225,13 +225,12 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
-			algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 			/* DEFAULTS */
 		}
 		
 		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		
-		pickerView.selectRow(0, inComponent: 0, animated: true)
+		pickerView.selectRow(0, inComponent: 0, animated: false)
 		
 		let tempNum = manager.defaults.integer(forKey: "runNum")
 
@@ -276,7 +275,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		print("WILL APPEAR")
+
 	}
     
     // MARK: - Conversation Handling
