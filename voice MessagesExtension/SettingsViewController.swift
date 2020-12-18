@@ -289,12 +289,12 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	
 	//edit text field methods:
-	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		editTextField.resignFirstResponder()
+		textField.resignFirstResponder()
 		//requestPresentationStyle(.compact)
 		return true
 	}
+
 	
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		requestPresentationStyle(.expanded)
