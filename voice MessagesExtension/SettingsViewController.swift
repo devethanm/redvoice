@@ -41,6 +41,11 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var alertYes: UIButton!
 	@IBOutlet weak var alertNo: UIButton!
 	
+	@IBOutlet weak var createView: UIView!
+	@IBOutlet weak var algNameTextField: UITextField!
+	@IBOutlet weak var createSymbolsTextField: UITextField!
+	@IBOutlet weak var createStepper: UIStepper!
+	@IBOutlet weak var createFrequencyNumber: UILabel!
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
@@ -48,6 +53,27 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		mainVC.pickerView.reloadAllComponents()
 		dismiss(animated:true, completion: nil)
 	}
+	
+	@IBAction func createButtonPressed(_ sender: Any) {
+		requestPresentationStyle(.expanded)
+		
+		createView.isHidden = false
+	}
+	
+	@IBAction func finishedCreating(_ sender: Any) {
+		requestPresentationStyle(.compact)
+		createView.isHidden = true
+	}
+	
+	@IBAction func saveAlgorithmPressed(_ sender: Any) {
+	}
+	
+	@IBAction func discardAlgorithmPressed(_ sender: Any) {
+		
+	}
+	
+	
+	
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
 		requestPresentationStyle(.expanded)
@@ -101,7 +127,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		var tempSymbols = allSymbols
 		tempSymbols[selectedAlgorithm] = tempArr!
-		//manager.defaults.setValue(tempArr, forKey: algString)
+		manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
 		
 		var tempCC = allCC
 		if editCaseChanging.isOn {
@@ -179,8 +205,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
-			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["🖤", "🧛🏿‍♂️", "💋", "!"],
+			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
 			["👻","🎃","🕸","😨","🧡","🍁"]
 				
 			], forKey: "algSymbols")
@@ -263,10 +289,15 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	
 	//edit text field methods:
+	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		editTextField.resignFirstResponder()
-		requestPresentationStyle(.compact)
+		//requestPresentationStyle(.compact)
 		return true
+	}
+	
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		requestPresentationStyle(.expanded)
 	}
 	
     override func viewDidLoad() {
@@ -278,6 +309,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		algPickerView.dataSource = self
 		
 		editTextField.delegate = self
+		
+		createSymbolsTextField.delegate = self
+		algNameTextField.delegate = self
 		
 		// setup settingsButton gesture recognizer
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))

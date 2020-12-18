@@ -350,6 +350,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="createButtonPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="cDj-dc-HE4"/>
                                     <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
@@ -543,7 +544,7 @@
                                     <constraint firstItem="zno-4b-Zyz" firstAttribute="leading" secondItem="Zbz-LS-29U" secondAttribute="leading" constant="8" id="xBi-Nf-b6Q"/>
                                 </constraints>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-oZ-R0p" userLabel="Create Alg View">
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-oZ-R0p" userLabel="Create Alg View">
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llu-fe-eKD">
@@ -555,38 +556,41 @@
                                         <state key="normal" title="done"/>
                                         <connections>
                                             <action selector="editingFinished:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dbV-d1-3rI"/>
+                                            <action selector="finishedCreating:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dGL-J3-kwa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-j3-hwW">
-                                        <rect key="frame" x="8" y="128" width="117" height="17"/>
+                                        <rect key="frame" x="8" y="128" width="123" height="17"/>
                                         <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="A5G-AB-sdZ"/>
                                         </constraints>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
-                                        <state key="normal" title="Save Changes">
+                                        <state key="normal" title="Save Algorithm">
                                             <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
+                                            <action selector="saveAlgorithmPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="DT0-xA-40Y"/>
                                             <action selector="saveChangesPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="n26-hD-Y2B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27o-ks-Flm">
-                                        <rect key="frame" x="218" y="128" width="117" height="17"/>
+                                        <rect key="frame" x="212" y="128" width="123" height="17"/>
                                         <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
-                                        <state key="normal" title="Discard Changes">
+                                        <state key="normal" title="Discard Algorithm">
                                             <color key="titleColor" red="0.85896831750000002" green="0.82661014799999999" blue="0.88236010070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
+                                            <action selector="discardAlgorithmPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="m3X-p4-keL"/>
                                             <action selector="discardChangesPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="fA9-Ya-Tde"/>
                                         </connections>
                                     </button>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5o-77-ZBf">
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Symbols Separated By Spaces Here" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5o-77-ZBf">
                                         <rect key="frame" x="8" y="34" width="327" height="30"/>
                                         <color key="backgroundColor" red="0.6556345294" green="0.32494669329999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -629,7 +633,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Alg Name Here" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-nk-bWh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Alg Name Here" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-nk-bWh">
                                         <rect key="frame" x="45.666666666666657" y="0.0" width="251.99999999999997" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -637,7 +641,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -716,8 +720,13 @@
                         <outlet property="alertNo" destination="GgO-1U-Buc" id="1ED-5d-AGe"/>
                         <outlet property="alertView" destination="Zbz-LS-29U" id="hrA-8e-Dmq"/>
                         <outlet property="alertYes" destination="zno-4b-Zyz" id="1eJ-Nf-R5O"/>
+                        <outlet property="algNameTextField" destination="u6D-nk-bWh" id="Uu7-mF-au7"/>
                         <outlet property="algPickerView" destination="JKm-zg-QmZ" id="kYN-ba-AIg"/>
                         <outlet property="createButton" destination="FVn-La-bNs" id="1zx-RF-E6t"/>
+                        <outlet property="createFrequencyNumber" destination="xsS-rE-AYJ" id="iHg-nj-nGM"/>
+                        <outlet property="createStepper" destination="Z0S-hk-p93" id="jvj-uo-GO6"/>
+                        <outlet property="createSymbolsTextField" destination="D5o-77-ZBf" id="zSD-Bn-oF1"/>
+                        <outlet property="createView" destination="VRG-oZ-R0p" id="2Zt-kw-a51"/>
                         <outlet property="defaultsButton" destination="a0R-nj-Ifn" id="jtk-Qn-hsq"/>
                         <outlet property="editButton" destination="N16-eX-59C" id="2hi-Md-FPM"/>
                         <outlet property="editCaseChanging" destination="YZ7-W5-LF0" id="RUe-SK-FFj"/>
