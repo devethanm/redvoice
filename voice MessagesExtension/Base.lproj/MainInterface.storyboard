@@ -547,18 +547,6 @@
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-oZ-R0p" userLabel="Create Alg View">
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llu-fe-eKD">
-                                        <rect key="frame" x="303" y="2" width="35" height="21"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="vlD-an-UkK"/>
-                                        </constraints>
-                                        <state key="normal" title="done"/>
-                                        <connections>
-                                            <action selector="editingFinished:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dbV-d1-3rI"/>
-                                            <action selector="finishedCreating:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dGL-J3-kwa"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-j3-hwW">
                                         <rect key="frame" x="8" y="128" width="123" height="17"/>
                                         <color key="backgroundColor" red="0.12922850250000001" green="0.062992371620000001" blue="0.26021492480000002" alpha="0.51733732880000005" colorSpace="custom" customColorSpace="sRGB"/>
@@ -641,6 +629,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llu-fe-eKD">
+                                        <rect key="frame" x="303" y="2" width="35" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="vlD-an-UkK"/>
+                                        </constraints>
+                                        <state key="normal" title="done"/>
+                                        <connections>
+                                            <action selector="editingFinished:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dbV-d1-3rI"/>
+                                            <action selector="finishedCreating:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dGL-J3-kwa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

@@ -52,6 +52,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBAction func exitButtonPressed() {
 		mainVC.algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		mainVC.pickerView.reloadAllComponents()
+		requestPresentationStyle(.compact)
 		dismiss(animated:true, completion: nil)
 	}
 	
@@ -130,32 +131,34 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
-		requestPresentationStyle(.expanded)
-		
-		editTextField.text = ""
-		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
-		
-		
-		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
-		let symbols = allSymbols[selectedAlgorithm] as! [String]
-		
-		let allCC = manager.defaults.array(forKey: "algCCs")
-		let caseChanging = allCC![selectedAlgorithm] as! Bool
-		
-		let allFreq = manager.defaults.array(forKey: "algFreqs")
-		let frequency = allFreq![selectedAlgorithm] as! Double
-		
-		editFrequency.text = String(Int(frequency))
-		editCaseChanging.isOn = caseChanging
-		editChangeFrequency.value = frequency
-		
-		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-		for n in 0...symbols.count - 2{
-			editTextField.text! += symbols[n] + " "
+		if masterAlgorithms.count > 0 {
+			requestPresentationStyle(.expanded)
+			editTextField.text = ""
+			editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
+			
+			
+			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+			let symbols = allSymbols[selectedAlgorithm] as! [String]
+			
+			let allCC = manager.defaults.array(forKey: "algCCs")
+			let caseChanging = allCC![selectedAlgorithm] as! Bool
+			
+			let allFreq = manager.defaults.array(forKey: "algFreqs")
+			let frequency = allFreq![selectedAlgorithm] as! Double
+			
+			editFrequency.text = String(Int(frequency))
+			editCaseChanging.isOn = caseChanging
+			editChangeFrequency.value = frequency
+			
+			// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
+			for n in 0...symbols.count - 2{
+				editTextField.text! += symbols[n] + " "
+			}
+			editTextField.text! += symbols[symbols.count-1]
+			
+			editView.isHidden = false
 		}
-		editTextField.text! += symbols[symbols.count-1]
 		
-		editView.isHidden = false
 	}
 	
 	@IBAction func editFrequencyChanged(_ sender: Any) {
@@ -224,8 +227,10 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
 		alert = 0
+		if masterAlgorithms.count > 0 {
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
-		alertView.isHidden = false
+			alertView.isHidden = false
+		}
 	}
 	
 	@IBAction func yesPressed(_ sender: Any) {
