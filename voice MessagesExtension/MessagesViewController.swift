@@ -71,8 +71,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func genButtonPressed(_ sender: Any) {
-		previewTextView.text = ""
-		previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
+		if algorithms.count > 0 {
+			previewTextView.text = ""
+			previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
+		}
 	}
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
@@ -80,7 +82,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			self.activeConversation?.insertText(previewTextView.text)
 		}
 		else {
-			self.activeConversation?.insertText(generator.generate(algNum:selectedAlgorithm,text:writeTextView.text))
+			if algorithms.count > 0 {
+				self.activeConversation?.insertText(generator.generate(algNum:selectedAlgorithm,text:writeTextView.text))
+			}
 		}
 	}
 	
