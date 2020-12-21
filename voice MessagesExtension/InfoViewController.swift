@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Messages
 
-class InfoViewController: UIViewController {
+class InfoViewController: MSMessagesAppViewController {
 	
 	@IBOutlet weak var exitButton: UIImageView!
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
+		requestPresentationStyle(.compact)
 		dismiss(animated:true, completion: nil)
 	}
 	
@@ -29,11 +31,14 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		
         // Do any additional setup after loading the view.
 
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
+		
+		requestPresentationStyle(.expanded)
     }
     
 

@@ -761,12 +761,23 @@
                                     <constraint firstAttribute="height" constant="25" id="mbo-Il-DoN"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zg9-Wb-mTu">
+                                <rect key="frame" x="166.66666666666666" y="49" width="42" height="26.333333333333329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-0.5" height="-1"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g04-yD-o1N"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
                             <constraint firstItem="xyW-ap-nE4" firstAttribute="top" secondItem="g04-yD-o1N" secondAttribute="top" constant="5" id="KBa-ce-SNI"/>
                             <constraint firstItem="g04-yD-o1N" firstAttribute="trailing" secondItem="xyW-ap-nE4" secondAttribute="trailing" constant="15" id="bhd-d8-2WQ"/>
+                            <constraint firstItem="Zg9-Wb-mTu" firstAttribute="top" secondItem="g04-yD-o1N" secondAttribute="top" constant="5" id="i9Y-Wa-AYy"/>
+                            <constraint firstItem="Zg9-Wb-mTu" firstAttribute="centerX" secondItem="Vkc-2z-uAF" secondAttribute="centerX" id="kGM-o7-joE"/>
                         </constraints>
                     </view>
                     <connections>
