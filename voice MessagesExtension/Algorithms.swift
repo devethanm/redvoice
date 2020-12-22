@@ -39,11 +39,10 @@ public class Generator {
 		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		frequency = allFreq![algNum] as! Int
 		
-		print(frequency)
 		if frequency <= 1 {
 			frequency = 2
 		}
-		print(frequency)
+		
 		if Int.random(in: 1...frequency) != 1 {
 			returnText += symbols.randomElement() ?? " "
 			returnText += " "
@@ -103,104 +102,3 @@ public class Generator {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	/*
-	func returnSymbols(algNum: Int) -> [String] {
-		
-		if algNum == 0 {
-			return ["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"]
-		}
-		else if algNum == 1 {
-			return ["💔", "🖤", "🧛🏿‍♂️", "💋", "!"]
-		}
-		else if algNum == 2 {
-			return ["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"]
-		}
-		else if algNum == 3 {
-			return ["👻","🎃","🕸","😨","🧡","🍁"]
-		}
-		else {
-			return self.symbols
-		}
-	}
-	*/
-	/*
-	func generate(algNum: Int, text:String) -> String {
-		
-		let textarray = text.split(separator: " ")
-		returnText = "";
-		
-		if algNum == 0 {
-			
-			symbols = manager.defaults.stringArray(forKey: "alg0Symbols") ?? ["hello"]
-			
-			returnText += symbols.randomElement() ?? " "
-			returnText += " "
-			for word in textarray {
-				returnText += (word + " " + symbols.randomElement()! + " ")
-			}
-			
-			return returnText
-		}
-		else if algNum == 1 {
-			
-			symbols = manager.defaults.stringArray(forKey: "alg1Symbols")!
-			
-			returnText += symbols.randomElement() ?? " "
-			returnText += " "
-			for word in textarray {
-				returnText += (word + " " + symbols.randomElement()! + " ")
-			}
-			
-			return returnText
-		}
-		else if algNum == 2 {
-			
-			symbols = manager.defaults.stringArray(forKey: "alg2Symbols")!
-			
-			returnText += symbols.randomElement() ?? " "
-			returnText += " "
-			for word in textarray {
-				returnText += (word + " " + symbols.randomElement()! + " ")
-			}
-			
-			return returnText
-			
-		}
-		else if algNum == 3 {
-			
-			symbols = manager.defaults.stringArray(forKey: "alg3Symbols")!
-			
-			returnText += symbols.randomElement() ?? " "
-			returnText += " "
-			for word in textarray {
-				returnText += (word + " " + symbols.randomElement()! + " ")
-			}
-			
-			return returnText
-			
-		}
-		else { return returnText }
-		
-	}
-
-}
-*/
