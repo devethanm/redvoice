@@ -39,6 +39,11 @@ public class Generator {
 		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		frequency = allFreq![algNum] as! Int
 		
+		print(frequency)
+		if frequency <= 1 {
+			frequency = 2
+		}
+		print(frequency)
 		if Int.random(in: 1...frequency) != 1 {
 			returnText += symbols.randomElement() ?? " "
 			returnText += " "
@@ -46,7 +51,7 @@ public class Generator {
 		
 		if caseChanging {
 			for word in textArray {
-				if frequency == 1{ frequency = 2 }
+				//if frequency == 1{ frequency = 2 }
 				
 				if Int.random(in: 1...frequency) != 1 {
 					if Int.random(in: 1...frequency) != 1 {

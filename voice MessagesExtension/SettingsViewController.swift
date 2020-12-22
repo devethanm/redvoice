@@ -156,12 +156,13 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			editCaseChanging.isOn = caseChanging
 			editChangeFrequency.value = frequency
 			
-			// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-			for n in 0...symbols.count - 2{
-				editTextField.text! += symbols[n] + " "
+			if symbols.count != 0 {
+				for n in 0...symbols.count - 2{
+					editTextField.text! += symbols[n] + " "
+				}
+				editTextField.text! += symbols[symbols.count-1]
 			}
-			editTextField.text! += symbols[symbols.count-1]
-			
+
 			editView.isHidden = false
 		}
 		
