@@ -156,11 +156,14 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			editCaseChanging.isOn = caseChanging
 			editChangeFrequency.value = frequency
 			
-			if symbols.count != 0 {
+			if symbols.count > 1 {
 				for n in 0...symbols.count - 2{
 					editTextField.text! += symbols[n] + " "
 				}
 				editTextField.text! += symbols[symbols.count-1]
+			}
+			else if symbols.count == 1 {
+				editTextField.text = symbols[0]
 			}
 
 			editView.isHidden = false
