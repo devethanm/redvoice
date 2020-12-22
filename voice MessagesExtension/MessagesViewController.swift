@@ -200,11 +200,11 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         rotationAngle = -90 * (.pi/180)
         pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
 		
-		let gold = UIColor(hex: "#ffe700ff")
-		writeTextView.layer.borderColor = gold?.cgColor
+		let color = UIColor(hex: "#f090ffff")
+		writeTextView.layer.borderColor = color?.cgColor
 		writeTextView.layer.borderWidth = 2.0
 		
-		previewTextView.layer.borderColor = UIColor.blue.cgColor
+		previewTextView.layer.borderColor = color?.cgColor
 		previewTextView.layer.borderWidth = 2.0
 		/*
 		 STYLING
