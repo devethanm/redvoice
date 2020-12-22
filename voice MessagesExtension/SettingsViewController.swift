@@ -84,39 +84,45 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func saveAlgorithmPressed(_ sender: Any) {
-		let algorithms = manager.defaults.stringArray(forKey: "algorithms")
-		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
-		let allCC = manager.defaults.array(forKey: "algCCs")
-		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		
-		var tempAlgs = algorithms
-		tempAlgs!.append(algNameTextField.text ?? "")
-		manager.defaults.setValue(tempAlgs, forKey: "algorithms")
-		
-		var tempSymbols = allSymbols
-		var tempArr = [String]()
-		tempArr = createSymbolsTextField.text?.components(separatedBy: " ") ?? ["NO SYMBOLS ADDED TO THIS ALGORITHM"]
-		tempSymbols.append(tempArr)
-		manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
-		
-		var tempCC = allCC
-		if createSwitch.isOn {
-			tempCC!.append(true)
+		if algNameTextField.text == "" || createSymbolsTextField.text == "" {
+			
 		}
 		else {
-			tempCC!.append(false)
+			let algorithms = manager.defaults.stringArray(forKey: "algorithms")
+			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+			let allCC = manager.defaults.array(forKey: "algCCs")
+			let allFreq = manager.defaults.array(forKey: "algFreqs")
+			
+			var tempAlgs = algorithms
+			tempAlgs!.append(algNameTextField.text ?? "")
+			manager.defaults.setValue(tempAlgs, forKey: "algorithms")
+			
+			var tempSymbols = allSymbols
+			var tempArr = [String]()
+			tempArr = createSymbolsTextField.text?.components(separatedBy: " ") ?? ["NO SYMBOLS ADDED TO THIS ALGORITHM"]
+			tempSymbols.append(tempArr)
+			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
+			
+			var tempCC = allCC
+			if createSwitch.isOn {
+				tempCC!.append(true)
+			}
+			else {
+				tempCC!.append(false)
+			}
+			manager.defaults.setValue(tempCC, forKey: "algCCs")
+			
+			var tempFreq = allFreq
+			tempFreq!.append(Int(createStepper.value))
+			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
+			
+			createStepper.value = 1.0
+			createFrequencyNumber.text = String(1)
+			createSwitch.isOn = false
+			createSymbolsTextField.text = ("")
+			algNameTextField.text = ("Enter Alg Name Here")
 		}
-		manager.defaults.setValue(tempCC, forKey: "algCCs")
-		
-		var tempFreq = allFreq
-		tempFreq!.append(Int(createStepper.value))
-		manager.defaults.setValue(tempFreq, forKey: "algFreqs")
-		
-		createStepper.value = 1.0
-		createFrequencyNumber.text = String(1)
-		createSwitch.isOn = false
-		createSymbolsTextField.text = ("")
-		algNameTextField.text = ("Enter Alg Name Here")
 	}
 	
 	@IBAction func discardAlgorithmPressed(_ sender: Any) {

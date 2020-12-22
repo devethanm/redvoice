@@ -378,7 +378,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-8O-bvl">
                                         <rect key="frame" x="8" y="128" width="117" height="17"/>
-                                        <color key="backgroundColor" red="0.37663632629999999" green="0.1491988897" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="FVY-Ta-Zc7"/>
                                         </constraints>
@@ -394,7 +394,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-8Q-nfh">
                                         <rect key="frame" x="218" y="128" width="117" height="17"/>
-                                        <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Discard Changes">
@@ -407,7 +407,7 @@
                                     </button>
                                     <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="suT-70-O53">
                                         <rect key="frame" x="8" y="32" width="327" height="30"/>
-                                        <color key="backgroundColor" red="0.65372949840000005" green="0.32184875010000003" blue="0.99613004920000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.89088732000000004" green="0.59148710969999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zG4-Wl-Szv"/>
                                         </constraints>
@@ -549,7 +549,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-j3-hwW">
                                         <rect key="frame" x="8" y="128" width="123" height="17"/>
-                                        <color key="backgroundColor" red="0.38054090740000002" green="0.1487888694" blue="0.78043621780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="A5G-AB-sdZ"/>
                                         </constraints>
@@ -566,7 +566,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27o-ks-Flm">
                                         <rect key="frame" x="212" y="128" width="123" height="17"/>
-                                        <color key="backgroundColor" red="0.38054090740000002" green="0.1487888694" blue="0.78043621780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Discard Algorithm">
@@ -580,12 +580,12 @@
                                     </button>
                                     <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Symbols Separated By Spaces Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5o-77-ZBf">
                                         <rect key="frame" x="8" y="34" width="327" height="30"/>
-                                        <color key="backgroundColor" red="0.65372949840000005" green="0.32184875010000003" blue="0.99613004920000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.89088732000000004" green="0.59148710969999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Mse-X6-gVn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPk-VD-kHq">
                                         <rect key="frame" x="43" y="89" width="51" height="31"/>
@@ -619,7 +619,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Alg Name Here" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-nk-bWh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-nk-bWh">
                                         <rect key="frame" x="45.666666666666657" y="0.0" width="251.99999999999997" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
