@@ -65,6 +65,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		algNameTextField.text = ("Enter Alg Name Here")
 		createButton.isHidden = true
 		defaultsButton.isHidden = true
+		exitButton.isHidden = true
 		createView.isHidden = false
 	}
 	
@@ -85,6 +86,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createView.isHidden = true
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	@IBAction func saveAlgorithmPressed(_ sender: Any) {
@@ -169,6 +171,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			
 			createButton.isHidden = true
 			defaultsButton.isHidden = true
+			exitButton.isHidden = true
 			editView.isHidden = false
 		}
 		
@@ -237,6 +240,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		editView.isHidden = true
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	
@@ -246,6 +250,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
 			createButton.isHidden = true
 			defaultsButton.isHidden = true
+			exitButton.isHidden = true
 			alertView.isHidden = false
 		}
 	}
@@ -281,13 +286,13 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["🖤", "🧛🏿‍♂️", "💋", "!"],
+			["🖤", "🧛🏿‍♂️", "💋", "!", "<3"],
 			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
 			["👻","🎃","🕸","😨","🧡","🍁"]
 				
 			], forKey: "algSymbols")
 			
-			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			manager.defaults.setValue([3.0, 3.0, 3.0, 3.0], forKey: "algFreqs")
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
@@ -298,12 +303,14 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		alertView.isHidden = true
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	@IBAction func noPressed(_ sender: Any) {
 		alertView.isHidden = true
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	
@@ -312,6 +319,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		alertLabel.text = "RESTORE DEFAULTS?"
 		createButton.isHidden = true
 		defaultsButton.isHidden = true
+		exitButton.isHidden = true
 		alertView.isHidden = false
 	}
 	

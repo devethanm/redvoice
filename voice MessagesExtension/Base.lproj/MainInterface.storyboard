@@ -30,7 +30,7 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3B-WQ-jgZ">
-                                <rect key="frame" x="122" y="105" width="76" height="25"/>
+                                <rect key="frame" x="122" y="110" width="76" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="N7H-qd-Yfn"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrQ-9g-zub">
-                                <rect key="frame" x="202" y="105" width="76" height="25"/>
+                                <rect key="frame" x="202" y="110" width="76" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="7az-gz-vlh"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJO-eH-fbb">
-                                <rect key="frame" x="42" y="105" width="76" height="25"/>
+                                <rect key="frame" x="42" y="110" width="76" height="25"/>
                                 <color key="backgroundColor" red="0.35130188740786561" green="0.1920937973690714" blue="0.74867147842639592" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="3Sq-Gl-Uyr"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" keyboardDismissMode="interactive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-BW-e9S">
-                                <rect key="frame" x="0.0" y="163" width="160" height="372"/>
+                                <rect key="frame" x="0.0" y="168" width="160" height="367"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <color key="textColor" red="0.89086043829999995" green="0.58755117649999999" blue="0.9961159825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -92,7 +92,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wy-CW-WkJ">
-                                <rect key="frame" x="160" y="163" width="160" height="372"/>
+                                <rect key="frame" x="160" y="168" width="160" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.89088720079999995" green="0.58743542429999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -100,7 +100,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WRITE TEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-lG-e6a">
-                                <rect key="frame" x="15" y="138" width="130" height="25"/>
+                                <rect key="frame" x="15" y="143" width="130" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,7 +109,7 @@
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREVIEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-0R-9LY">
-                                <rect key="frame" x="175" y="138" width="130" height="25"/>
+                                <rect key="frame" x="175" y="143" width="130" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +152,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Text Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrW-5T-yhY">
-                                <rect key="frame" x="21" y="171" width="118" height="21"/>
+                                <rect key="frame" x="21" y="176" width="118" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="k4f-Vs-ReW"/>
                                     <constraint firstAttribute="height" constant="21" id="mPp-Rr-ciI"/>
@@ -185,14 +185,14 @@
                             <constraint firstItem="wP5-Cy-slw" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="T1B-ZO-Ju3"/>
                             <constraint firstItem="NfD-0R-9LY" firstAttribute="trailing" secondItem="LDy-ih-0nr" secondAttribute="trailing" constant="-15" id="TcH-zV-hNF"/>
                             <constraint firstItem="yuy-dq-Vj5" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="WG5-QB-hcd"/>
-                            <constraint firstItem="wrQ-9g-zub" firstAttribute="top" secondItem="wP5-Cy-slw" secondAttribute="bottom" constant="-90" id="WmT-lI-rCY"/>
-                            <constraint firstItem="P3B-WQ-jgZ" firstAttribute="top" secondItem="yuy-dq-Vj5" secondAttribute="bottom" constant="35" id="WrO-9e-EcB"/>
+                            <constraint firstItem="wrQ-9g-zub" firstAttribute="top" secondItem="wP5-Cy-slw" secondAttribute="bottom" constant="-85" id="WmT-lI-rCY"/>
+                            <constraint firstItem="P3B-WQ-jgZ" firstAttribute="top" secondItem="yuy-dq-Vj5" secondAttribute="bottom" constant="40" id="WrO-9e-EcB"/>
                             <constraint firstItem="LB4-lG-e6a" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="15" id="YuC-p1-8Lo"/>
                             <constraint firstItem="yuy-dq-Vj5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LDy-ih-0nr" secondAttribute="leading" id="ZCk-ui-qgF"/>
                             <constraint firstItem="ZlM-dk-hOw" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="5" id="b9e-vV-5Fx"/>
                             <constraint firstItem="P3B-WQ-jgZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tJO-eH-fbb" secondAttribute="trailing" id="gIC-TM-8Ih"/>
                             <constraint firstItem="LB4-lG-e6a" firstAttribute="top" secondItem="P3B-WQ-jgZ" secondAttribute="bottom" constant="8" id="hwh-au-KGf"/>
-                            <constraint firstItem="tJO-eH-fbb" firstAttribute="top" secondItem="wP5-Cy-slw" secondAttribute="bottom" constant="-90" id="j6e-Jy-ma0"/>
+                            <constraint firstItem="tJO-eH-fbb" firstAttribute="top" secondItem="wP5-Cy-slw" secondAttribute="bottom" constant="-85" id="j6e-Jy-ma0"/>
                             <constraint firstItem="NfD-0R-9LY" firstAttribute="top" secondItem="P3B-WQ-jgZ" secondAttribute="bottom" constant="8" id="jBC-qw-i8m"/>
                             <constraint firstItem="5wy-CW-WkJ" firstAttribute="leading" secondItem="Z4A-BW-e9S" secondAttribute="trailing" id="kKR-3d-LL6"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wrQ-9g-zub" secondAttribute="trailing" constant="42" id="kKV-s0-Ncn"/>
@@ -248,16 +248,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-y7-MbR">
-                                <rect key="frame" x="126" y="49" width="123" height="26.333333333333329"/>
+                                <rect key="frame" x="126" y="49" width="123" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-nj-Ifn">
-                                <rect key="frame" x="85" y="185" width="205" height="25"/>
+                                <rect key="frame" x="85" y="183.66666666666666" width="205" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Lzq-jw-M4G"/>
@@ -276,7 +276,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
-                                <rect key="frame" x="16" y="75.333333333333329" width="171" height="101.99999999999999"/>
+                                <rect key="frame" x="16" y="74" width="171" height="102"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-zg-QmZ">
                                         <rect key="frame" x="0.0" y="0.0" width="171" height="102"/>
@@ -293,7 +293,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J87-f5-prc">
-                                <rect key="frame" x="188" y="75.333333333333329" width="171" height="101.99999999999999"/>
+                                <rect key="frame" x="188" y="74" width="171" height="102"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-eX-59C">
                                         <rect key="frame" x="7" y="20" width="156" height="25"/>
@@ -315,7 +315,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-r3-1Jn">
-                                        <rect key="frame" x="7" y="57.000000000000014" width="156" height="25"/>
+                                        <rect key="frame" x="7" y="57" width="156" height="25"/>
                                         <color key="backgroundColor" red="0.37646478410000001" green="0.1504229903" blue="0.76474910969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="EFD-zD-VwW"/>
@@ -347,7 +347,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-La-bNs">
-                                <rect key="frame" x="85" y="220" width="205" height="25"/>
+                                <rect key="frame" x="85" y="218.66666666666666" width="205" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -384,11 +384,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-8O-bvl">
-                                        <rect key="frame" x="8" y="128" width="117" height="17"/>
+                                        <rect key="frame" x="8" y="128" width="130" height="17"/>
                                         <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="FVY-Ta-Zc7"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Save Changes">
@@ -400,8 +401,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-8Q-nfh">
-                                        <rect key="frame" x="218" y="128" width="117" height="17"/>
+                                        <rect key="frame" x="205" y="128" width="130" height="17"/>
                                         <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Discard Changes">
@@ -501,11 +503,12 @@
                                         <size key="shadowOffset" width="-0.5" height="-1"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zno-4b-Zyz">
-                                        <rect key="frame" x="8" y="128" width="108" height="17"/>
+                                        <rect key="frame" x="8" y="128" width="118" height="17"/>
                                         <color key="backgroundColor" red="0.37657874819999998" green="0.14961075779999999" blue="0.77259272339999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="yFu-Vu-AdV"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="          YES          ">
@@ -517,8 +520,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgO-1U-Buc">
-                                        <rect key="frame" x="227" y="128" width="108" height="17"/>
+                                        <rect key="frame" x="217" y="128" width="118" height="17"/>
                                         <color key="backgroundColor" red="0.37657874819999998" green="0.14961075779999999" blue="0.77259272339999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="NO">
@@ -552,11 +556,12 @@
                                 <rect key="frame" x="16" y="74" width="343" height="153"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-j3-hwW">
-                                        <rect key="frame" x="8" y="128" width="123" height="17"/>
+                                        <rect key="frame" x="8" y="128" width="137" height="17"/>
                                         <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="A5G-AB-sdZ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Save Algorithm">
@@ -569,8 +574,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27o-ks-Flm">
-                                        <rect key="frame" x="212" y="128" width="123" height="17"/>
+                                        <rect key="frame" x="198" y="128" width="137" height="17"/>
                                         <color key="backgroundColor" red="0.47994923589999999" green="0.1836382151" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="titleShadowOffset" width="-1" height="-1"/>
                                         <state key="normal" title="Discard Algorithm">
@@ -766,16 +772,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zg9-Wb-mTu">
-                                <rect key="frame" x="166.66666666666666" y="49" width="42" height="26.333333333333329"/>
+                                <rect key="frame" x="167.66666666666666" y="49" width="39.666666666666657" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.81481699490000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="made by @ethanmdev, follow @moneyttrree" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-7U-eWA">
-                                <rect key="frame" x="73" y="83" width="229" height="68"/>
+                                <rect key="frame" x="73" y="81.666666666666671" width="229" height="68.000000000000014"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="229" id="931-HD-f68"/>
@@ -786,7 +792,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app inspired by cartivoice.com, made by by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
-                                <rect key="frame" x="73" y="159" width="229" height="68"/>
+                                <rect key="frame" x="73" y="157.66666666666666" width="229" height="68"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="I12-9F-UOt"/>

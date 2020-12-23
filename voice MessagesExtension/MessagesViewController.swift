@@ -144,7 +144,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
-		label.font = .systemFont(ofSize: 16, weight: .bold)
+		label.font = .systemFont(ofSize: 17, weight: .bold)
 		view.addSubview( label )
 		
         view.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
@@ -225,7 +225,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 				
 			], forKey: "algSymbols")
 			
-			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			manager.defaults.setValue([3.0, 3.0, 3.0, 3.0], forKey: "algFreqs")
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
