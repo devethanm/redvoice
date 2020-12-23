@@ -105,10 +105,14 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue(tempAlgs, forKey: "algorithms")
 			
 			var tempSymbols = allSymbols
+			print(tempSymbols)
 			var tempArr = [String]()
+			print(tempArr)
 			tempArr = createSymbolsTextField.text?.components(separatedBy: " ") ?? ["NO SYMBOLS ADDED TO THIS ALGORITHM"]
 			tempSymbols.append(tempArr)
+			print(tempSymbols)
 			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
+			print(manager.defaults.stringArray(forKey: "algSymbols") ?? "DIDNT WORK")
 			
 			var tempCC = allCC
 			if createSwitch.isOn {
@@ -279,6 +283,15 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			tempFreq!.remove(at: selectedAlgorithm)
 			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
 			
+			var temp = algorithms!.count
+			temp -= 1
+			if selectedAlgorithm == temp {
+				selectedAlgorithm -= 1
+			}
+			
+			if selectedAlgorithm < 0 {
+				selectedAlgorithm = 0
+			}
 		}
 		else if alert == 1 {
 			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
@@ -409,6 +422,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		exitButton.addGestureRecognizer(tapGestureRecognizer)
 		
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		
+		selectedAlgorithm = 0
 		
 		editView.isHidden = true
     }
