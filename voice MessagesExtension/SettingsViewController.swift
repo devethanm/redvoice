@@ -63,8 +63,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createSwitch.isOn = false
 		createSymbolsTextField.text = ("")
 		algNameTextField.text = ("Enter Alg Name Here")
-		createButton.isHidden = false
-		defaultsButton.isHidden = false
+		createButton.isHidden = true
+		defaultsButton.isHidden = true
 		exitButton.isHidden = true
 		createView.isHidden = false
 	}
