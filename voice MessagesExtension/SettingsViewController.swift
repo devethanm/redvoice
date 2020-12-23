@@ -63,6 +63,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createSwitch.isOn = false
 		createSymbolsTextField.text = ("")
 		algNameTextField.text = ("Enter Alg Name Here")
+		createButton.isHidden = true
+		defaultsButton.isHidden = true
 		createView.isHidden = false
 	}
 	
@@ -81,6 +83,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		algPickerView.reloadAllComponents()
 		createView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
 	}
 	
 	@IBAction func saveAlgorithmPressed(_ sender: Any) {
@@ -133,9 +137,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		algNameTextField.text = ("Enter Alg Name Here")
 	}
 	
-	
-	
-	
 	@IBAction func editButtonPressed(_ sender: Any) {
 		if masterAlgorithms.count > 0 {
 			requestPresentationStyle(.expanded)
@@ -165,7 +166,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			else if symbols.count == 1 {
 				editTextField.text = symbols[0]
 			}
-
+			
+			createButton.isHidden = true
+			defaultsButton.isHidden = true
 			editView.isHidden = false
 		}
 		
@@ -232,6 +235,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//done BUTTON
 		requestPresentationStyle(.compact)
 		editView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
 	}
 	
 	
@@ -239,6 +244,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		alert = 0
 		if masterAlgorithms.count > 0 {
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
+			createButton.isHidden = true
+			defaultsButton.isHidden = true
 			alertView.isHidden = false
 		}
 	}
@@ -289,16 +296,22 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		algPickerView.reloadAllComponents()
 		alertView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
 	}
 	
 	@IBAction func noPressed(_ sender: Any) {
 		alertView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
 	}
 	
 	
 	@IBAction func defaultsPressed(_ sender: Any) {
 		alert = 1
 		alertLabel.text = "RESTORE DEFAULTS?"
+		createButton.isHidden = true
+		defaultsButton.isHidden = true
 		alertView.isHidden = false
 	}
 	
