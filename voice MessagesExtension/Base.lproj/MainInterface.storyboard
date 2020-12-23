@@ -788,18 +788,18 @@
                                     <constraint firstAttribute="height" constant="68" id="Rr3-Js-0f4"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app inspired by cartivoice.com, made by by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
-                                <rect key="frame" x="73" y="157.66666666666666" width="229" height="68"/>
+                                <rect key="frame" x="73" y="157.66666666666666" width="229" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="I12-9F-UOt"/>
+                                    <constraint firstAttribute="height" constant="80" id="I12-9F-UOt"/>
                                     <constraint firstAttribute="width" constant="229" id="U9y-Yz-P2A"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
