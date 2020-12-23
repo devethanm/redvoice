@@ -257,12 +257,13 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-nj-Ifn">
-                                <rect key="frame" x="95.666666666666686" y="185" width="184" height="17"/>
+                                <rect key="frame" x="85" y="185" width="205" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="Lzq-jw-M4G"/>
+                                    <constraint firstAttribute="height" constant="25" id="Lzq-jw-M4G"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cIW-d3-U4j"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
                                 <state key="normal" title="Restore Default Algorithms">
@@ -346,8 +347,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-La-bNs">
-                                <rect key="frame" x="95.666666666666686" y="210" width="184" height="17"/>
+                                <rect key="frame" x="85" y="220" width="205" height="25"/>
                                 <color key="backgroundColor" red="0.38048368690000001" green="0.14920470120000001" blue="0.77651447060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.87275368259999997" green="0.45359319129999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
                                 <state key="normal" title="Create Custom Algorithm">
@@ -695,7 +697,7 @@
                             <constraint firstItem="FVn-La-bNs" firstAttribute="centerX" secondItem="8I2-4x-y9h" secondAttribute="centerX" id="FzT-xy-lq0"/>
                             <constraint firstItem="Zbz-LS-29U" firstAttribute="top" secondItem="CQr-oL-mew" secondAttribute="bottom" id="Gcm-zf-OWT"/>
                             <constraint firstItem="FVn-La-bNs" firstAttribute="height" secondItem="a0R-nj-Ifn" secondAttribute="height" id="I8M-XW-dSY"/>
-                            <constraint firstItem="FVn-La-bNs" firstAttribute="top" secondItem="a0R-nj-Ifn" secondAttribute="bottom" constant="8" symbolic="YES" id="I8S-LT-1hT"/>
+                            <constraint firstItem="FVn-La-bNs" firstAttribute="top" secondItem="a0R-nj-Ifn" secondAttribute="bottom" constant="10" id="I8S-LT-1hT"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="Zbz-LS-29U" secondAttribute="trailing" constant="16" id="Len-XU-Owh"/>
                             <constraint firstItem="tmh-hy-CMx" firstAttribute="trailing" secondItem="VRG-oZ-R0p" secondAttribute="trailing" constant="16" id="NYu-hc-u3d"/>
                             <constraint firstItem="9iH-w3-yUI" firstAttribute="leading" secondItem="tmh-hy-CMx" secondAttribute="leading" constant="16" id="Nh0-bn-qZk"/>
