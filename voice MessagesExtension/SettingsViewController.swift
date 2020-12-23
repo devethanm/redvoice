@@ -105,54 +105,10 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue(tempAlgs, forKey: "algorithms")
 			
 			
-			/*
-			
-			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
-			let allCC = manager.defaults.array(forKey: "algCCs")
-			let allFreq = manager.defaults.array(forKey: "algFreqs")
-			let tempArr = editTextField.text?.components(separatedBy: " ")
-			
-			var tempFreq = allFreq
-			tempFreq![selectedAlgorithm] = editChangeFrequency.value
-			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
-			//manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
-			
 			var tempSymbols = allSymbols
-			tempSymbols[selectedAlgorithm] = tempArr!
-			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
-			
-			
-			
-			
-			
-			
-			var tempSymbols = allSymbols
-			print("TEMP SYMBOLS : ")
-			print(tempSymbols)
-			tempSymbols[selectedAlgorithm] = tempArr!
-			print("TEMP SYMBOLS : ")
-			print(tempSymbols)
-			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
-			print("DEFAULTS")
-			print(manager.defaults.array(forKey: "algSymbols")!)
-			*/
-			
-			var tempSymbols = allSymbols
-			
-			print("TEMP SYMBOLS: ")
-			print(tempSymbols)
-			
 			let tempArr = createSymbolsTextField.text?.components(separatedBy: " ")
-			
-			
 			tempSymbols.append(tempArr!)
-			
-			print("TEMP SYMBOLS: ")
-			print(tempSymbols)
-			
 			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
-			print("DEFAULTS :")
-			print(manager.defaults.array(forKey: "algSymbols") ?? "DIDNT WORK")
 			
 			var tempCC = allCC
 			if createSwitch.isOn {
@@ -172,7 +128,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			createSwitch.isOn = false
 			createSymbolsTextField.text = ("")
 			algNameTextField.text = ("Enter Alg Name Here")
-			//print(manager.defaults.array(forKey: "algSymbols") ?? "DIDNT WORK")
 		}
 	}
 	
@@ -185,8 +140,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func editButtonPressed(_ sender: Any) {
-		print("EDIT BUTTON PRESSED" )
-		print(manager.defaults.array(forKey: "algSymbols") ?? "DIDNT WORK")
 		if masterAlgorithms.count > 0 {
 			requestPresentationStyle(.expanded)
 			editTextField.text = ""
@@ -246,18 +199,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//manager.defaults.setValue(editChangeFrequency.value, forKey: algFreqString)
 		
 		var tempSymbols = allSymbols
-		print("SAVE CHANGES PRESSED HERE")
-		print("ELRJOEIJSOFJI")
-		print("ELRJOEIJSOFJI")
-		print("ELRJOEIJSOFJI")
-		print("TEMP SYMBOLS : ")
-		print(tempSymbols)
 		tempSymbols[selectedAlgorithm] = tempArr!
-		print("TEMP SYMBOLS : ")
-		print(tempSymbols)
 		manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
-		print("DEFAULTS")
-		print(manager.defaults.array(forKey: "algSymbols")!)
 		
 		var tempCC = allCC
 		if editCaseChanging.isOn {
@@ -302,14 +245,10 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
 		exitButton.isHidden = false
-		print("FINISHED EDITING" )
-		print(manager.defaults.array(forKey: "algSymbols")!)
 	}
 	
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
-		print("SELECTED ALG: ")
-		print(selectedAlgorithm)
 		alert = 0
 		if masterAlgorithms.count > 0 {
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
@@ -378,8 +317,6 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
 		exitButton.isHidden = false
-		print("SELECTED ALG AT THE END: ")
-		print(selectedAlgorithm)
 	}
 	
 	@IBAction func noPressed(_ sender: Any) {
