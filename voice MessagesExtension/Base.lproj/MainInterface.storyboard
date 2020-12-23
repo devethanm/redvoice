@@ -570,7 +570,6 @@
                                         </state>
                                         <connections>
                                             <action selector="saveAlgorithmPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="DT0-xA-40Y"/>
-                                            <action selector="saveChangesPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="n26-hD-Y2B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27o-ks-Flm">
@@ -585,7 +584,6 @@
                                         </state>
                                         <connections>
                                             <action selector="discardAlgorithmPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="m3X-p4-keL"/>
-                                            <action selector="discardChangesPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="fA9-Ya-Tde"/>
                                         </connections>
                                     </button>
                                     <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Symbols Separated By Spaces Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5o-77-ZBf">
