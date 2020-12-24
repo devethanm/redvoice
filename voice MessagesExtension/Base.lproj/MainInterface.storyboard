@@ -273,7 +273,6 @@
                                 </state>
                                 <connections>
                                     <action selector="defaultsPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="KgD-mr-Sqx"/>
-                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="P6T-eU-38d"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iH-w3-yUI">
@@ -312,7 +311,6 @@
                                         </state>
                                         <connections>
                                             <action selector="editButtonPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dpr-xQ-3n6"/>
-                                            <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="aCm-yp-GVv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-r3-1Jn">
@@ -331,7 +329,6 @@
                                         </state>
                                         <connections>
                                             <action selector="removeButtonPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="hhX-A8-AXI"/>
-                                            <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ky8-Ny-B2k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -359,7 +356,6 @@
                                 </state>
                                 <connections>
                                     <action selector="createButtonPressed:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="cDj-dc-HE4"/>
-                                    <action selector="sendButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ntQ-iv-iG8"/>
                                 </connections>
                             </button>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Cz-UB7">
@@ -646,7 +642,6 @@
                                         </constraints>
                                         <state key="normal" title="done"/>
                                         <connections>
-                                            <action selector="editingFinished:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dbV-d1-3rI"/>
                                             <action selector="finishedCreating:" destination="5uI-cZ-xXG" eventType="touchUpInside" id="dGL-J3-kwa"/>
                                         </connections>
                                     </button>
