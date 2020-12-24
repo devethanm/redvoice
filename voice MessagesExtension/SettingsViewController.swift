@@ -28,6 +28,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var removeButton: UIButton!
 	@IBOutlet weak var defaultsButton: UIButton!
 	@IBOutlet weak var createButton: UIButton!
+	@IBOutlet weak var symbolsWarning: UITextView!
 	
 	@IBOutlet weak var editView: UIView!
 	@IBOutlet weak var editLabel: UILabel!
@@ -67,6 +68,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		defaultsButton.isHidden = true
 		exitButton.isHidden = true
 		createView.isHidden = false
+		symbolsWarning.isHidden = false
 	}
 	
 	@IBAction func createStepperChanged(_ sender: Any) {
@@ -87,6 +89,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
 		exitButton.isHidden = false
+		symbolsWarning.isHidden = true
 	}
 	
 	@IBAction func saveAlgorithmPressed(_ sender: Any) {
@@ -173,6 +176,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			defaultsButton.isHidden = true
 			exitButton.isHidden = true
 			editView.isHidden = false
+			symbolsWarning.isHidden = false
 		}
 		
 	}
@@ -247,6 +251,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		createButton.isHidden = false
 		defaultsButton.isHidden = false
 		exitButton.isHidden = false
+		symbolsWarning.isHidden = true
 	}
 	
 	
