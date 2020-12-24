@@ -788,7 +788,7 @@
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="made by @ethanmdev, follow @moneyttrree" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-7U-eWA">
-                                <rect key="frame" x="37" y="86" width="300" height="68"/>
+                                <rect key="frame" x="37" y="85.666666666666671" width="300" height="68.000000000000014"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="931-HD-f68"/>
@@ -798,7 +798,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app inspired by cartivoice.com, made by by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app inspired by cartivoice.com, made by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
                                 <rect key="frame" x="37" y="161.66666666666666" width="300" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
