@@ -222,7 +222,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		let frequency = allFreq![selectedAlgorithm] as! Double
-
+		
+		editTextField.text = ""
+		
 		if symbols.count > 1 {
 			for n in 0...symbols.count - 2{
 				editTextField.text! += symbols[n] + " "
