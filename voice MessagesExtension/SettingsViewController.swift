@@ -28,6 +28,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var removeButton: UIButton!
 	@IBOutlet weak var defaultsButton: UIButton!
 	@IBOutlet weak var createButton: UIButton!
+	@IBOutlet weak var symbolsWarning: UITextView!
 	
 	@IBOutlet weak var editView: UIView!
 	@IBOutlet weak var editLabel: UILabel!
@@ -41,41 +42,143 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBOutlet weak var alertYes: UIButton!
 	@IBOutlet weak var alertNo: UIButton!
 	
+	@IBOutlet weak var createView: UIView!
+	@IBOutlet weak var algNameTextField: UITextField!
+	@IBOutlet weak var createSymbolsTextField: UITextField!
+	@IBOutlet weak var createStepper: UIStepper!
+	@IBOutlet weak var createFrequencyNumber: UILabel!
+	@IBOutlet weak var createSwitch: UISwitch!
 	
 	// handles press on the exit button / picture
 	@IBAction func exitButtonPressed() {
 		mainVC.algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		mainVC.pickerView.reloadAllComponents()
+		requestPresentationStyle(.compact)
 		dismiss(animated:true, completion: nil)
 	}
 	
-	@IBAction func editButtonPressed(_ sender: Any) {
+	@IBAction func createButtonPressed(_ sender: Any) {
 		requestPresentationStyle(.expanded)
-		
-		editTextField.text = ""
-		editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
-		
-		
-		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
-		let symbols = allSymbols[selectedAlgorithm] as! [String]
-		
-		let allCC = manager.defaults.array(forKey: "algCCs")
-		let caseChanging = allCC![selectedAlgorithm] as! Bool
-		
-		let allFreq = manager.defaults.array(forKey: "algFreqs")
-		let frequency = allFreq![selectedAlgorithm] as! Double
-		
-		editFrequency.text = String(Int(frequency))
-		editCaseChanging.isOn = caseChanging
-		editChangeFrequency.value = frequency
-		
-		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-		for n in 0...symbols.count - 2{
-			editTextField.text! += symbols[n] + " "
+		createStepper.value = 1.0
+		createFrequencyNumber.text = String(1)
+		createSwitch.isOn = false
+		createSymbolsTextField.text = ("")
+		algNameTextField.text = ("Enter Alg Name Here")
+		createButton.isHidden = true
+		defaultsButton.isHidden = true
+		exitButton.isHidden = true
+		createView.isHidden = false
+		symbolsWarning.isHidden = false
+	}
+	
+	@IBAction func createStepperChanged(_ sender: Any) {
+		if createStepper.value >= 5.0 {
+			createStepper.value = 5.0
 		}
-		editTextField.text! += symbols[symbols.count-1]
+		if createStepper.value <= 1.0 {
+			createStepper.value = 1.0
+		}
+		createFrequencyNumber.text = String(Int(createStepper.value))
+	}
+	
+	@IBAction func finishedCreating(_ sender: Any) {
+		requestPresentationStyle(.compact)
+		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
+		algPickerView.reloadAllComponents()
+		createView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
+		exitButton.isHidden = false
+		symbolsWarning.isHidden = true
+	}
+	
+	@IBAction func saveAlgorithmPressed(_ sender: Any) {
 		
-		editView.isHidden = false
+		if algNameTextField.text == "" || createSymbolsTextField.text == "" {
+			
+		}
+		else {
+			let algorithms = manager.defaults.stringArray(forKey: "algorithms")
+			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+			let allCC = manager.defaults.array(forKey: "algCCs")
+			let allFreq = manager.defaults.array(forKey: "algFreqs")
+			
+			var tempAlgs = algorithms
+			tempAlgs!.append(algNameTextField.text ?? "")
+			manager.defaults.setValue(tempAlgs, forKey: "algorithms")
+			
+			
+			var tempSymbols = allSymbols
+			let tempArr = createSymbolsTextField.text?.components(separatedBy: " ")
+			tempSymbols.append(tempArr!)
+			manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
+			
+			var tempCC = allCC
+			if createSwitch.isOn {
+				tempCC!.append(true)
+			}
+			else {
+				tempCC!.append(false)
+			}
+			manager.defaults.setValue(tempCC, forKey: "algCCs")
+			
+			var tempFreq = allFreq
+			tempFreq!.append(Int(createStepper.value))
+			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
+			
+			createStepper.value = 1.0
+			createFrequencyNumber.text = String(1)
+			createSwitch.isOn = false
+			createSymbolsTextField.text = ("")
+			algNameTextField.text = ("Enter Alg Name Here")
+		}
+	}
+	
+	@IBAction func discardAlgorithmPressed(_ sender: Any) {
+		createStepper.value = 1.0
+		createFrequencyNumber.text = String(1)
+		createSwitch.isOn = false
+		createSymbolsTextField.text = ("")
+		algNameTextField.text = ("Enter Alg Name Here")
+	}
+	
+	@IBAction func editButtonPressed(_ sender: Any) {
+		if masterAlgorithms.count > 0 {
+			requestPresentationStyle(.expanded)
+			editTextField.text = ""
+			editLabel.text = "EDITING " + "\"" + masterAlgorithms[selectedAlgorithm] + "\""
+			
+			
+			let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+			let symbols = allSymbols[selectedAlgorithm] as! [String]
+			
+			let allCC = manager.defaults.array(forKey: "algCCs")
+			let caseChanging = allCC![selectedAlgorithm] as! Bool
+			
+			let allFreq = manager.defaults.array(forKey: "algFreqs")
+			let frequency = allFreq![selectedAlgorithm] as! Double
+			
+			editFrequency.text = String(Int(frequency))
+			editCaseChanging.isOn = caseChanging
+			editChangeFrequency.value = frequency
+			
+			if symbols.count > 1 {
+				for n in 0...symbols.count - 2{
+					editTextField.text! += symbols[n] + " "
+				}
+				editTextField.text! += symbols[symbols.count-1]
+			}
+			else if symbols.count == 1 {
+				editTextField.text = symbols[0]
+			}
+			
+			createButton.isHidden = true
+			defaultsButton.isHidden = true
+			exitButton.isHidden = true
+			editView.isHidden = false
+			symbolsWarning.isHidden = false
+		}
+		
 	}
 	
 	@IBAction func editFrequencyChanged(_ sender: Any) {
@@ -101,7 +204,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		var tempSymbols = allSymbols
 		tempSymbols[selectedAlgorithm] = tempArr!
-		//manager.defaults.setValue(tempArr, forKey: algString)
+		manager.defaults.setValue(tempSymbols, forKey: "algSymbols")
 		
 		var tempCC = allCC
 		if editCaseChanging.isOn {
@@ -124,11 +227,17 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		let allFreq = manager.defaults.array(forKey: "algFreqs")
 		let frequency = allFreq![selectedAlgorithm] as! Double
 		
-		// TODO: Make it so that it actually used the correct algorithm symbols, it errors out if you select alg 6 or any higher number
-		for n in 0...symbols.count - 2{
-			editTextField.text! += symbols[n] + " "
+		editTextField.text = ""
+		
+		if symbols.count > 1 {
+			for n in 0...symbols.count - 2{
+				editTextField.text! += symbols[n] + " "
+			}
+			editTextField.text! += symbols[symbols.count-1]
 		}
-		editTextField.text! += symbols[symbols.count-1]
+		else if symbols.count == 1 {
+			editTextField.text = symbols[0]
+		}
 		
 		editChangeFrequency.value = frequency
 		editFrequency.text = String(Int(frequency))
@@ -139,13 +248,22 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		//done BUTTON
 		requestPresentationStyle(.compact)
 		editView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
+		exitButton.isHidden = false
+		symbolsWarning.isHidden = true
 	}
 	
 	
 	@IBAction func removeButtonPressed(_ sender: Any) {
 		alert = 0
+		if masterAlgorithms.count > 0 {
 		alertLabel.text = "REMOVE " + "\"" + masterAlgorithms[selectedAlgorithm] + "\"" + " ?"
-		alertView.isHidden = false
+			createButton.isHidden = true
+			defaultsButton.isHidden = true
+			exitButton.isHidden = true
+			alertView.isHidden = false
+		}
 	}
 	
 	@IBAction func yesPressed(_ sender: Any) {
@@ -172,6 +290,15 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			tempFreq!.remove(at: selectedAlgorithm)
 			manager.defaults.setValue(tempFreq, forKey: "algFreqs")
 			
+			var temp = algorithms!.count
+			temp -= 1
+			if selectedAlgorithm == temp {
+				selectedAlgorithm -= 1
+			}
+			
+			if selectedAlgorithm < 0 {
+				selectedAlgorithm = 0
+			}
 		}
 		else if alert == 1 {
 			manager.defaults.setValue(["*^!", "RED", "no words", "halloween"], forKey: "algorithms")
@@ -179,13 +306,13 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
-			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["🖤", "🧛🏿‍♂️", "💋", "!", "<3"],
+			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
 			["👻","🎃","🕸","😨","🧡","🍁"]
 				
 			], forKey: "algSymbols")
 			
-			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			manager.defaults.setValue([3.0, 3.0, 3.0, 3.0], forKey: "algFreqs")
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
@@ -194,16 +321,25 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		algPickerView.reloadAllComponents()
 		alertView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	@IBAction func noPressed(_ sender: Any) {
 		alertView.isHidden = true
+		createButton.isHidden = false
+		defaultsButton.isHidden = false
+		exitButton.isHidden = false
 	}
 	
 	
 	@IBAction func defaultsPressed(_ sender: Any) {
 		alert = 1
 		alertLabel.text = "RESTORE DEFAULTS?"
+		createButton.isHidden = true
+		defaultsButton.isHidden = true
+		exitButton.isHidden = true
 		alertView.isHidden = false
 	}
 	
@@ -264,9 +400,14 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	
 	//edit text field methods:
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		editTextField.resignFirstResponder()
-		requestPresentationStyle(.compact)
+		textField.resignFirstResponder()
+		//requestPresentationStyle(.compact)
 		return true
+	}
+
+	
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		requestPresentationStyle(.expanded)
 	}
 	
     override func viewDidLoad() {
@@ -279,6 +420,9 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		editTextField.delegate = self
 		
+		createSymbolsTextField.delegate = self
+		algNameTextField.delegate = self
+		
 		// setup settingsButton gesture recognizer
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		exitButton.isUserInteractionEnabled = true
@@ -286,7 +430,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		
 		masterAlgorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		
-		editView.isHidden = true
+		selectedAlgorithm = 0
+		
     }
     
 

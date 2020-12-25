@@ -71,8 +71,10 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func genButtonPressed(_ sender: Any) {
-		previewTextView.text = ""
-		previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
+		if algorithms.count > 0 {
+			previewTextView.text = ""
+			previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
+		}
 	}
 	
 	@IBAction func sendButtonPressed(_ sender: Any) {
@@ -80,7 +82,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			self.activeConversation?.insertText(previewTextView.text)
 		}
 		else {
-			self.activeConversation?.insertText(generator.generate(algNum:selectedAlgorithm,text:writeTextView.text))
+			if algorithms.count > 0 {
+				self.activeConversation?.insertText(generator.generate(algNum:selectedAlgorithm,text:writeTextView.text))
+			}
 		}
 	}
 	
@@ -140,7 +144,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 		label.text = algorithms[row]
 		label.textColor = .white
 		label.textAlignment = .center
-		label.font = .systemFont(ofSize: 16, weight: .bold)
+		label.font = .systemFont(ofSize: 17, weight: .bold)
 		view.addSubview( label )
 		
         view.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
@@ -196,11 +200,11 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
         rotationAngle = -90 * (.pi/180)
         pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
 		
-		let gold = UIColor(hex: "#ffe700ff")
-		writeTextView.layer.borderColor = gold?.cgColor
+		let color = UIColor(hex: "#f090ffff")
+		writeTextView.layer.borderColor = color?.cgColor
 		writeTextView.layer.borderWidth = 2.0
 		
-		previewTextView.layer.borderColor = UIColor.blue.cgColor
+		previewTextView.layer.borderColor = color?.cgColor
 		previewTextView.layer.borderWidth = 2.0
 		/*
 		 STYLING
@@ -215,13 +219,13 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["💔", "🖤", "🧛🏿‍♂️", "💋", "!"],
-			["💔", "🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
+			["🖤", "🧛🏿‍♂️", "💋", "!", "<3"],
+			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
 			["👻","🎃","🕸","😨","🧡","🍁"]
 				
 			], forKey: "algSymbols")
 			
-			manager.defaults.setValue([2.0, 2.0, 2.0, 2.0], forKey: "algFreqs")
+			manager.defaults.setValue([3.0, 3.0, 3.0, 3.0], forKey: "algFreqs")
 			
 			manager.defaults.setValue([true, true, false, false], forKey: "algCCs")
 			
