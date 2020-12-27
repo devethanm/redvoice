@@ -31,6 +31,7 @@ public class Generator {
 		//let algFreqString = "alg" + selectedAlgorithmString + "Freq"
 		
 		let allSymbols = manager.defaults.array(forKey: "algSymbols")!
+		
 		symbols = allSymbols[algNum] as! [String]
 		
 		let allCC = manager.defaults.array(forKey: "algCCs")

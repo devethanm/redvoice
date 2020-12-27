@@ -71,6 +71,7 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	}
 	
 	@IBAction func genButtonPressed(_ sender: Any) {
+		algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		if algorithms.count > 0 {
 			previewTextView.text = ""
 			previewTextView.text = generator.generate( algNum:selectedAlgorithm, text:writeTextView.text )
@@ -219,9 +220,9 @@ class MessagesViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["🖤", "🧛🏿‍♂️", "💋", "!", "<3"],
+			["🖤", "🧛🏿‍♂️", "💋", "!", "<3", ">"],
 			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
-			["👻","🎃","🕸","😨","🧡","🍁"]
+			["👻","🎃","🕸","😨", "🕷", "🧛🏿‍♂️"]
 				
 			], forKey: "algSymbols")
 			
