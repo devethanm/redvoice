@@ -53,6 +53,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 	@IBAction func exitButtonPressed() {
 		mainVC.algorithms = manager.defaults.stringArray(forKey: "algorithms")!
 		mainVC.pickerView.reloadAllComponents()
+		mainVC.pickerView.selectRow(0, inComponent: 0, animated: false)
+		mainVC.selectedAlgorithm = 0
 		requestPresentationStyle(.compact)
 		dismiss(animated:true, completion: nil)
 	}
@@ -306,7 +308,7 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			manager.defaults.setValue([
 				
 			["!", "*^!", "*", "^", "*^", "! +", "+", "! +:)", ". x", "_", "!!", "*+_", "*!+:)", ":)", "*+", "++", "**"],
-			["🖤", "🧛🏿‍♂️", "💋", "!", "<3"],
+			["🖤", "🧛🏿‍♂️", "💋", "!", "<3", ">"],
 			["🖤", "💕", "💞", "💖", "🦋", "*", "()", "_", ":)", ":(", "+", "^", "$", "!"],
 			["👻","🎃","🕸","😨","🧡","🍁"]
 				
