@@ -164,6 +164,8 @@ class SettingsViewController: MSMessagesAppViewController, UIPickerViewDelegate,
 			editCaseChanging.isOn = caseChanging
 			editChangeFrequency.value = frequency
 			
+			editTextField.text = ""
+			
 			if symbols.count > 1 {
 				for n in 0...symbols.count - 2{
 					editTextField.text! += symbols[n] + " "
