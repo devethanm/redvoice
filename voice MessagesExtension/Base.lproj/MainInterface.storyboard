@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -787,7 +787,7 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-0.5" height="-1"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="made by @ethanmdev, follow @moneyttrree" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-7U-eWA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="made by @ethanmdev, follow @moneyttrree" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyb-7U-eWA">
                                 <rect key="frame" x="37" y="85.666666666666671" width="300" height="68.000000000000014"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -798,11 +798,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app inspired by cartivoice.com, made by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
-                                <rect key="frame" x="37" y="161.66666666666666" width="300" height="80"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="app inspired by cartivoice.com, made by @LScorrcho &amp; @chrisorzel (2019) " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-3F-y0k">
+                                <rect key="frame" x="37" y="150" width="300" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="I12-9F-UOt"/>
+                                    <constraint firstAttribute="height" constant="100" id="I12-9F-UOt"/>
                                     <constraint firstAttribute="width" constant="300" id="U9y-Yz-P2A"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -815,7 +815,7 @@
                         <constraints>
                             <constraint firstItem="cyb-7U-eWA" firstAttribute="centerX" secondItem="Vkc-2z-uAF" secondAttribute="centerX" constant="-0.5" id="1OS-oI-b0U"/>
                             <constraint firstItem="xyW-ap-nE4" firstAttribute="top" secondItem="g04-yD-o1N" secondAttribute="top" constant="5" id="KBa-ce-SNI"/>
-                            <constraint firstItem="OkC-3F-y0k" firstAttribute="top" secondItem="cyb-7U-eWA" secondAttribute="bottom" constant="8" symbolic="YES" id="MId-rL-6pu"/>
+                            <constraint firstItem="OkC-3F-y0k" firstAttribute="top" secondItem="cyb-7U-eWA" secondAttribute="bottom" constant="-3.6666666666666856" id="MId-rL-6pu"/>
                             <constraint firstItem="OkC-3F-y0k" firstAttribute="centerX" secondItem="Vkc-2z-uAF" secondAttribute="centerX" constant="-0.5" id="aOg-1I-fjO"/>
                             <constraint firstItem="g04-yD-o1N" firstAttribute="trailing" secondItem="xyW-ap-nE4" secondAttribute="trailing" constant="15" id="bhd-d8-2WQ"/>
                             <constraint firstItem="Zg9-Wb-mTu" firstAttribute="top" secondItem="g04-yD-o1N" secondAttribute="top" constant="5" id="i9Y-Wa-AYy"/>
