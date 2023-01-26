@@ -1,5 +1,5 @@
 # voice
-iMessage interface used for sending advanced messages.
+iMessage interface used for sending creative messages.
 
 ---
 **USEFUL RESOURCES**
